@@ -54,21 +54,22 @@ public class PlayerMovement : MonoBehaviour
 
         float moveZ = Input.GetAxis("Vertical");
         float moveX = Input.GetAxis("Horizontal");
-        moveDir = new Vector3(moveX, 0, moveZ);
+        moveDir = transform.right * moveX + transform.forward * moveZ;
 
         if (isGrounded )
         {
             if(moveDir != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
             {
-                moveSpeed = walkspeed;
+                moveSpeed = walkspeed * Time.deltaTime;
                 animator.SetBool("walk", true);
                 animator.SetBool("run", false);
             }
 
             else if(moveDir != Vector3.zero && Input.GetKeyDown(KeyCode.LeftShift))
             {
-                moveSpeed = runSpeed;
+                moveSpeed = runSpeed * Time.deltaTime;
                 animator.SetBool("run", true);
+                animator.SetBool("walk", false);
             }
 
             else if(moveDir == Vector3.zero)
@@ -77,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("run", false);
 
             }
-            moveDir *= moveSpeed;
+            characterController.Move(moveDir * moveSpeed);
         }
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
