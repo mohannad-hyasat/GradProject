@@ -173,8 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7554da1c73cd8449b53d2bfb8c1b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkspeed: 5
-  runSpeed: 10
+  walkspeed: 1
+  runSpeed: 1
+  crouchSpeed: 0
   isGrounded: 0
   groundMask:
     serializedVersion: 2
@@ -292,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkspeed: 5
   runSpeed: 20
+  crouchSpeed: 0
   isGrounded: 0
   groundMask:
     serializedVersion: 2

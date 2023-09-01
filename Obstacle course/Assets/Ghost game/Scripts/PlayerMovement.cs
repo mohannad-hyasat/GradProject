@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveSpeed;
     public float walkspeed;
     public float runSpeed;
+    public float crouchSpeed;
     public bool isGrounded;
     public LayerMask groundMask;
     public float gravity;
@@ -62,20 +63,30 @@ public class PlayerMovement : MonoBehaviour
             {
                 moveSpeed = walkspeed * Time.deltaTime;
                 animator.SetBool("walk", true);
+                animator.SetFloat("FB", moveZ);
+                if(moveZ<0)
+                    animator.SetFloat("RL", -moveX);
+                else
+                    animator.SetFloat("RL", moveX);
                 animator.SetBool("run", false);
             }
-
-            else if(moveDir != Vector3.zero && Input.GetKeyDown(KeyCode.LeftShift))
+            else if(moveDir != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
             {
                 moveSpeed = runSpeed * Time.deltaTime;
                 animator.SetBool("run", true);
+                animator.SetFloat("SFB", moveZ);
                 animator.SetBool("walk", false);
+                if(moveZ<0)
+                    animator.SetFloat("SRL", -moveX);
+                else
+                    animator.SetFloat("SRL", moveX);
+                
             }
-
             else if(moveDir == Vector3.zero)
             {
                 animator.SetBool("walk", false);
                 animator.SetBool("run", false);
+
 
             }
             characterController.Move(moveDir * moveSpeed);
@@ -83,4 +94,5 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
     }
+
 }
