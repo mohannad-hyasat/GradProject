@@ -191,6 +191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 230217037}
+  - component: {fileID: 230217038}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -214,6 +215,23 @@ Transform:
   - {fileID: 20288301}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &230217038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230217034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73eafd9ab0f68b41a630cf406f4597d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  Health: 0
+  IsDead: 0
+  Anim: {fileID: 2108366017}
+  choice: 0
 --- !u!1 &386698894
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,10 +739,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a43dc162910424cb00f251ce35e8e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 180
   PlayerOriantation: {fileID: 0}
   X_Rotation: 0
   Y_Rotation: 0
+  mouseSensitivity: 90
 --- !u!114 &2032987357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,6 +1060,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2686890238588325744, guid: 7856c197eb4c77840878eba92e1c48b7,
         type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686890238588325744, guid: 7856c197eb4c77840878eba92e1c48b7,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686890238588325744, guid: 7856c197eb4c77840878eba92e1c48b7,
+        type: 3}
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
@@ -1242,6 +1270,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 20288302}
   m_SourcePrefab: {fileID: 100100000, guid: 7856c197eb4c77840878eba92e1c48b7, type: 3}
+--- !u!95 &2108366017 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2686890238588325744, guid: 7856c197eb4c77840878eba92e1c48b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2108366016}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

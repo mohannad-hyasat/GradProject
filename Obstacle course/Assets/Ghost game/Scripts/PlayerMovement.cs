@@ -62,9 +62,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 moveSpeed = walkspeed;
                 animator.SetBool("walk", true);
+                animator.SetBool("run", false);
             }
 
-            else if(moveDir != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
+            else if(moveDir != Vector3.zero && Input.GetKeyDown(KeyCode.LeftShift))
             {
                 moveSpeed = runSpeed;
                 animator.SetBool("run", true);
