@@ -181,6 +181,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   gravity: -9.81
+  PlayerHealth: {fileID: 0}
   animator: {fileID: 0}
   characterController: {fileID: 0}
 --- !u!1 &230217034
@@ -299,6 +300,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   gravity: -9.81
+  PlayerHealth: {fileID: 0}
   animator: {fileID: 0}
   characterController: {fileID: 0}
 --- !u!23 &386698898
@@ -742,6 +744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerOriantation: {fileID: 0}
+  Playerhealth: {fileID: 0}
   X_Rotation: 0
   Y_Rotation: 0
   mouseSensitivity: 90
@@ -1063,12 +1066,12 @@ PrefabInstance:
     - target: {fileID: 2686890238588325744, guid: 7856c197eb4c77840878eba92e1c48b7,
         type: 3}
       propertyPath: m_UpdateMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2686890238588325744, guid: 7856c197eb4c77840878eba92e1c48b7,
         type: 3}
       propertyPath: m_CullingMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2686890238588325744, guid: 7856c197eb4c77840878eba92e1c48b7,
         type: 3}

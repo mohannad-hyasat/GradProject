@@ -4,6 +4,7 @@ public class PlayerCam : MonoBehaviour
 {
     [Header("Player transfrom")]
     public Transform PlayerOriantation;
+    public UniversalHealth Playerhealth;
     [HideInInspector]
     public float X_Rotation = 0f;
     [HideInInspector]
@@ -15,6 +16,7 @@ public class PlayerCam : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         PlayerOriantation = transform.parent;
+        Playerhealth = GetComponentInParent<UniversalHealth>();
     }
     /// <summary>
     /// Takes in mouse inputs and turns the inputs into A eular rotation
@@ -30,6 +32,6 @@ public class PlayerCam : MonoBehaviour
     }
     void Update()
     {
-        RotatePlayerAndCamera();
+        if (Playerhealth.Health > 0){ RotatePlayerAndCamera(); }
     }
 }

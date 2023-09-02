@@ -35,10 +35,19 @@ public class UniversalHealth : MonoBehaviour, I_AllStats
         {
             Console.WriteLine("DEAD");
             if (Anim != null)
+            {
                 Anim.SetTrigger("Dead");
+
+            }
             IsDead = true;
 
         }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        Apply_Damage(10f);
     }
 }
 public enum Chooser

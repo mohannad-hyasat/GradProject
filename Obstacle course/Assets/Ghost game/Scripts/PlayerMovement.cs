@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,8 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     public LayerMask groundMask;
     public float gravity;
-
-
+    public UniversalHealth PlayerHealth;
     private Vector3 moveDir;
     private Vector3 velocity;
     public Animator animator;
@@ -23,12 +23,14 @@ public class PlayerMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        PlayerHealth = GetComponentInParent<UniversalHealth>();
     }
 
     // Update is called once per frame
     void Update()
-    {        
-        Move();
+    {
+        if (PlayerHealth.Health > 0) { Move(); }
+
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 0.1f, groundMask))
         {
@@ -40,9 +42,6 @@ public class PlayerMovement : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 0.1f, Color.red);
             isGrounded = false;
         }
-
-
-
     }
 
     private void Move()
