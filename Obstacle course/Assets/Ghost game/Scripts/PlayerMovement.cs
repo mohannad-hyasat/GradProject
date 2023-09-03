@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -123,16 +124,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (shouldCrouch)
         {
-            StartCoroutine(CrouchStand());
+            CrouchStand();
         }
     }
-    private IEnumerator CrouchStand()
+    private async void CrouchStand()
     {
         duringCrouchAnimation = true;
         float timelapsed = 0f;
         float targetHeight = isCrouching ? standHeight : crouchHeight;
         Vector3 targetCenter = isCrouching ? standingCenter : crouchingCenter;
         Vector3 currentCenter = characterController.center;
+        float stance = isCrouching ? 0f : 1f;
         float currentHeight = characterController.height;
 
         while (timelapsed < timeToCrouch)
@@ -140,11 +142,11 @@ public class PlayerMovement : MonoBehaviour
             characterController.height = Mathf.Lerp(currentHeight, targetHeight, timelapsed / timeToCrouch);
             characterController.center = Vector3.Lerp(currentCenter, targetCenter, timelapsed / timeToCrouch);
             timelapsed += Time.deltaTime;
-            yield return null;
+            await Task.Yield();
         }
         characterController.height = targetHeight;
         characterController.center = targetCenter;
-
+        animator.SetFloat("Stance", stance);
         isCrouching = !isCrouching;
 
 
