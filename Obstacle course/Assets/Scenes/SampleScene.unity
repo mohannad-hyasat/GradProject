@@ -181,7 +181,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   gravity: -9.81
-  crouchHeight: 0.5
+  crouchHeight: 1
   standHeight: 2
   crouchingCenter: {x: 0, y: 0.5, z: 0}
   standingCenter: {x: 0, y: 1, z: 0}
@@ -729,7 +729,7 @@ Transform:
   m_GameObject: {fileID: 2032987354}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.18395633, z: -0, w: -0.9829344}
-  m_LocalPosition: {x: -0.0040602684, y: 1.8539996, z: -0.007003784}
+  m_LocalPosition: {x: -0.004060258, y: 1.8539996, z: -0.0070038415}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1267,7 +1267,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2686890238580842728, guid: 7856c197eb4c77840878eba92e1c48b7,
         type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 2032987355}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2686890238580948232, guid: 7856c197eb4c77840878eba92e1c48b7,

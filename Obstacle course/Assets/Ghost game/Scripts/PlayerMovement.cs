@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float walkspeed;
     public float runSpeed;
     public float crouchSpeed;
-    [HideInInspector]
+    //[HideInInspector]
     public bool isGrounded;
     public LayerMask groundMask;
    [HideInInspector] 
@@ -56,7 +56,8 @@ public class PlayerMovement : MonoBehaviour
             if (moveDir != Vector3.zero && isCrouching)
             {
                 moveSpeed = crouchSpeed * Time.deltaTime;
-                animator.SetBool("Crouch", true);
+                animator.SetBool("CrouchWalk", true);
+                animator.SetBool("Crouch", false);
                 animator.SetBool("walk", false);
                 animator.SetFloat("CFB", moveZ);
                 animator.SetBool("run", false);
@@ -65,17 +66,19 @@ public class PlayerMovement : MonoBehaviour
                 else
                     animator.SetFloat("CRL", moveX);
             }
-            else if (moveDir != Vector3.zero && !Input.GetKey(KeyCode.LeftShift) && !isCrouching)
+            if (moveDir != Vector3.zero && !Input.GetKey(KeyCode.LeftShift) && !isCrouching)
             {
                 moveSpeed = walkspeed * Time.deltaTime;
                 animator.SetBool("walk", true);
+                animator.SetBool("run", false);
+                animator.SetBool("Crouch", false);
+                animator.SetBool("CrouchWalk", false);
                 animator.SetFloat("FB", moveZ);
                 if (moveZ < 0)
                     animator.SetFloat("RL", -moveX);
                 else
                     animator.SetFloat("RL", moveX);
-                animator.SetBool("run", false);
-                animator.SetBool("Crouch", false);
+                
             }
             else if (moveDir != Vector3.zero && Input.GetKey(KeyCode.LeftShift) && !isCrouching)
             {
@@ -84,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetFloat("SFB", moveZ);
                 animator.SetBool("walk", false);
                 animator.SetBool("Crouch", false);
+                animator.SetBool("CrouchWalk", false);
                 if (moveZ < 0)
                     animator.SetFloat("SRL", -moveX);
                 else
@@ -95,8 +99,7 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("run", false);
                 animator.SetBool("walk", false);
                 animator.SetBool("Crouch", true);
-                animator.SetFloat("CFB", 0f);
-                animator.SetFloat("CRL", 0f);
+                animator.SetBool("CrouchWalk", false);
 
             }
             else if (moveDir == Vector3.zero && !isCrouching)
@@ -104,14 +107,19 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("run", false);
                 animator.SetBool("walk", false);
                 animator.SetBool("Crouch", false);
+                animator.SetBool("CrouchWalk", false);
                 animator.SetFloat("FB", 0f);
                 animator.SetFloat("RL", 0f);
 
             }
             characterController.Move(moveDir * moveSpeed);
         }
-        velocity.y += gravity * Time.deltaTime;
-        characterController.Move(velocity * Time.deltaTime);
+        else 
+        { 
+            velocity.y += gravity * Time.deltaTime;
+            characterController.Move(velocity * Time.deltaTime);
+        }
+        
     }
     /// <summary>
     /// handels the crouch function
@@ -133,7 +141,6 @@ public class PlayerMovement : MonoBehaviour
         float targetHeight = isCrouching ? standHeight : crouchHeight;
         Vector3 targetCenter = isCrouching ? standingCenter : crouchingCenter;
         Vector3 currentCenter = characterController.center;
-        float stance = isCrouching ? 0f : 1f;
         float currentHeight = characterController.height;
         while (timelapsed < timeToCrouch)
         {
@@ -152,14 +159,14 @@ public class PlayerMovement : MonoBehaviour
         CrouchHandler();
         Move();
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 0.1f, groundMask))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up), out hit, 0.08f, groundMask))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 0.1f, Color.red);
+            Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.up) * 0.08f, Color.red);
             isGrounded = true;
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 0.1f, Color.red);
+            Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.up) * 0.08f, Color.red);
             isGrounded = false;
         }
     }
