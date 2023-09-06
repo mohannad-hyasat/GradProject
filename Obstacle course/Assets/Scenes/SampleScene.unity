@@ -173,17 +173,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7554da1c73cd8449b53d2bfb8c1b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkspeed: 1
-  runSpeed: 1
-  crouchSpeed: 0
+  walkspeed: 4
+  runSpeed: 8
+  crouchSpeed: 2
   isGrounded: 0
   groundMask:
     serializedVersion: 2
     m_Bits: 256
   gravity: -9.81
-  PlayerHealth: {fileID: 0}
+  crouchHeight: 0.5
+  standHeight: 2
+  crouchingCenter: {x: 0, y: 0.5, z: 0}
+  standingCenter: {x: 0, y: 1, z: 0}
   animator: {fileID: 0}
-  characterController: {fileID: 0}
 --- !u!1 &230217034
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,9 +302,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   gravity: -9.81
-  PlayerHealth: {fileID: 0}
+  crouchHeight: 0.5
+  standHeight: 2
+  crouchingCenter: {x: 0, y: 0.5, z: 0}
+  standingCenter: {x: 0, y: 1, z: 0}
   animator: {fileID: 0}
-  characterController: {fileID: 0}
 --- !u!23 &386698898
 MeshRenderer:
   m_ObjectHideFlags: 0
