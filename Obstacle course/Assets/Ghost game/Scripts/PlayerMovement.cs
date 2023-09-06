@@ -1,12 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement parameters")]
     private float moveSpeed;
     public float walkspeed;
     public float runSpeed;
     public float crouchSpeed;
+
     public bool isGrounded;
     public LayerMask groundMask;
     public float gravity;
@@ -21,10 +25,14 @@ public class PlayerMovement : MonoBehaviour
     public float timeToCrouch = 0.25f;
     public Vector3 crouchingCenter = new Vector3(0, 0.5f, 0);
     public Vector3 standingCenter = new Vector3(0, 1f, 0);
-    private bool isCrouching;
+    private bool isCrouching = false;
+    private bool duringCrouchAnimation;
+    private bool shouldCrouch => Input.GetKeyDown(KeyCode.LeftControl) && !duringCrouchAnimation && isGrounded;
+
+    //crouching center point
+
     public Animator animator;
 
-    private bool shouldCrouch => Input.GetKeyDown(KeyCode.LeftControl) && !animator.GetCurrentAnimatorStateInfo(0).IsName("Crouching") && isGrounded;
     [SerializeField] private CharacterController characterController;
 
     // Start is called before the first frame update
@@ -50,14 +58,19 @@ public class PlayerMovement : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 0.1f, Color.red);
             isGrounded = false;
         }
+
+
+
     }
 
     private void Move()
-    { 
+    {
+
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = 0f;
         }
+
         float moveZ = Input.GetAxis("Vertical");
         float moveX = Input.GetAxis("Horizontal");
         moveDir = transform.right * moveX + transform.forward * moveZ;
@@ -67,11 +80,14 @@ public class PlayerMovement : MonoBehaviour
             if (moveDir != Vector3.zero && isCrouching)
             {
                 moveSpeed = crouchSpeed * Time.deltaTime;
-                animator.SetBool("IsCrouching", true);
-                animator.SetFloat("CFB", moveZ);
-                animator.SetFloat("CFB", moveX);
+                animator.SetBool("Crouch", true);
                 animator.SetBool("walk", false);
+                animator.SetFloat("CFB", moveZ);
                 animator.SetBool("run", false);
+                if (moveZ < 0)
+                    animator.SetFloat("CRL", -moveX);
+                else
+                    animator.SetFloat("CRL", moveX);
             }
             else if (moveDir != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
             {
@@ -83,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
                 else
                     animator.SetFloat("RL", moveX);
                 animator.SetBool("run", false);
-                animator.SetBool("IsCrouching", true);
+                animator.SetBool("Crouch", false);
             }
             else if (moveDir != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
             {
@@ -91,21 +107,29 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("run", true);
                 animator.SetFloat("SFB", moveZ);
                 animator.SetBool("walk", false);
-                animator.SetBool("crouchWalk", false);
-                animator.SetBool("walk", false);
-                animator.SetBool("IsCrouching", true);
+                animator.SetBool("Crouch", false);
                 if (moveZ < 0)
                     animator.SetFloat("SRL", -moveX);
                 else
                     animator.SetFloat("SRL", moveX);
 
             }
-            else if (moveDir == Vector3.zero)
+            else if (moveDir == Vector3.zero && isCrouching)
             {
-                animator.SetBool("walk", false);
                 animator.SetBool("run", false);
-                animator.SetBool("IsCrouching", true);
+                animator.SetBool("walk", false);
+                animator.SetBool("Crouch", true);
+                animator.SetFloat("CFB", moveZ);
+                animator.SetFloat("CRL", moveX);
 
+            }
+            else if (moveDir == Vector3.zero && !isCrouching)
+            {
+                animator.SetBool("run", false);
+                animator.SetBool("walk", true);
+                animator.SetBool("Crouch", false);
+                animator.SetFloat("FB", moveZ);
+                animator.SetFloat("RL", moveX);
 
             }
             characterController.Move(moveDir * moveSpeed);
@@ -122,6 +146,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private async void CrouchStand()
     {
+        duringCrouchAnimation = true;
         float timelapsed = 0f;
         float targetHeight = isCrouching ? standHeight : crouchHeight;
         Vector3 targetCenter = isCrouching ? standingCenter : crouchingCenter;
@@ -138,8 +163,11 @@ public class PlayerMovement : MonoBehaviour
         }
         characterController.height = targetHeight;
         characterController.center = targetCenter;
-        animator.SetFloat("Stance", stance);
+
         isCrouching = !isCrouching;
+
+
+        duringCrouchAnimation = false;
     }
 
 }
