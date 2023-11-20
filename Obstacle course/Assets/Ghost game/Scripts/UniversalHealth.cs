@@ -6,6 +6,7 @@ using UnityEngine;
 public class UniversalHealth : MonoBehaviour, I_AllStats
 {
     public float MaxHealth;
+    [HideInInspector]
     public float Health;
     public bool IsDead;
     public Animator Anim;
@@ -33,14 +34,11 @@ public class UniversalHealth : MonoBehaviour, I_AllStats
 
         if (Health <= 0 && !IsDead)
         {
-            Console.WriteLine("DEAD");
             if (Anim != null)
             {
                 Anim.SetTrigger("Dead");
-
             }
             IsDead = true;
-
         }
     }
 

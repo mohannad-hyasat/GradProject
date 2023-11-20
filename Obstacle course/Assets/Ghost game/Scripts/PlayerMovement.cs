@@ -29,12 +29,15 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public Animator animator;
     private CharacterController characterController;
+    [HideInInspector]
+    public UniversalHealth PlayerHealth;
 
     // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        PlayerHealth = GetComponentInParent<UniversalHealth>();
     }
 
     // Update is called once per frame
@@ -51,8 +54,8 @@ public class PlayerMovement : MonoBehaviour
         float moveZ = Input.GetAxis("Vertical");
         float moveX = Input.GetAxis("Horizontal");
         moveDir = transform.right * moveX + transform.forward * moveZ;
-        if (isGrounded)
-        {
+        
+        
             if (moveDir != Vector3.zero && isCrouching)
             {
                 moveSpeed = crouchSpeed * Time.deltaTime;
@@ -113,8 +116,8 @@ public class PlayerMovement : MonoBehaviour
 
             }
             characterController.Move(moveDir * moveSpeed);
-        }
-        else 
+        
+        if(!isGrounded)
         { 
             velocity.y += gravity * Time.deltaTime;
             characterController.Move(velocity * Time.deltaTime);
@@ -156,8 +159,11 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        CrouchHandler();
-        Move();
+        if (!PlayerHealth.IsDead)
+        {
+            CrouchHandler();
+            Move();
+        }
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up), out hit, 0.08f, groundMask))
         {
