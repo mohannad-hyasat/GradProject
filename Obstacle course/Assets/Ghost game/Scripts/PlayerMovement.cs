@@ -26,10 +26,10 @@ public class PlayerMovement : MonoBehaviour
     private bool isCrouching = false;
     private bool duringCrouchAnimation;
     private bool shouldCrouch => Input.GetKeyDown(KeyCode.LeftControl) && !duringCrouchAnimation && isGrounded;
-    [HideInInspector]
+    //[HideInInspector]
     public Animator animator;
     private CharacterController characterController;
-    [HideInInspector]
+    //[HideInInspector]
     public UniversalHealth PlayerHealth;
 
     // Start is called before the first frame update

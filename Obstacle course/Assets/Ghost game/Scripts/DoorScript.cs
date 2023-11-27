@@ -1,31 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
-    public Transform playerCam;
-    public Transform distChecker;
-    public Transform hinge;
+    public Transform PlayerCam;
+    public Transform DistChecker;
+    public Transform Hinge;
 
-    public float openSpeed;
-    public Vector2 rotationConstraints;
+    public float OpenSpeed;
+    public Vector2 RotationConstraints;
 
     bool movingDoor;
     float rotation;
     Vector3 targetPosition;
-    // Start is called before the first frame update
     void Start()
     {
-        targetPosition = distChecker.position;
+        DistChecker = GameObject.FindWithTag("DistanceChecker").transform;
+        Hinge = GameObject.FindWithTag("Hinge").transform;
+        PlayerCam = GameManager.Instance.PlayerCamera;
+        targetPosition = DistChecker.position;
+        OpenSpeed = 20;
+        RotationConstraints = new Vector2(-90, 90);
+        
     }
-
-    // Update is called once per frame
+    /// <summary>
+    /// Gets the Rotation of the door
+    /// </summary>
+    /// <returns>-firstDistance + secondDistance</returns>
+    float GetRotation()
+    {
+        float firstDistance = (DistChecker.position - targetPosition).sqrMagnitude;
+        Hinge.Rotate(Vector3.up);
+        float secondDistance = (DistChecker.position - targetPosition).sqrMagnitude;
+        Hinge.Rotate(-Vector3.up);
+        return -firstDistance + secondDistance;
+    }
     void Update()
     {
         if(Input.GetMouseButtonDown(0)) 
         {
-            if(Physics.Raycast(playerCam.position, playerCam.forward, out RaycastHit Hit, 3f))
+            if(Physics.Raycast(PlayerCam.position, PlayerCam.forward, out RaycastHit Hit, 3f))
             {
                 if (Hit.collider.CompareTag("door"))
                 {
@@ -39,19 +52,12 @@ public class DoorScript : MonoBehaviour
             {
                 movingDoor= false;
             }
-            targetPosition = playerCam.position + playerCam.forward * 2f;
+            targetPosition = PlayerCam.position + PlayerCam.forward * 2f;
         }
-        rotation += Mathf.Clamp(-GetRotation() * 5000 * Time.deltaTime, -openSpeed, openSpeed);
-        rotation = Mathf.Clamp(rotation, rotationConstraints.x, rotationConstraints.y);
-        hinge.rotation = Quaternion.Euler(0, rotation, 0);
+        rotation += Mathf.Clamp(-GetRotation() * 5000 * Time.deltaTime, -OpenSpeed, OpenSpeed);
+        rotation = Mathf.Clamp(rotation, RotationConstraints.x, RotationConstraints.y);
+        Hinge.rotation = Quaternion.Euler(0, rotation, 0);
     }
 
-    float GetRotation()
-    {
-        float firstDistance = (distChecker.position - targetPosition).sqrMagnitude;
-        hinge.Rotate(Vector3.up);
-        float secondDistance = (distChecker.position - targetPosition).sqrMagnitude;
-        hinge.Rotate(-Vector3.up);
-        return -firstDistance + secondDistance;
-    }
+    
 }

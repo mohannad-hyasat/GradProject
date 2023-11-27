@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - door
+  - Hinge
+  - DistanceChecker
+  - Camera
   layers:
   - Default
   - TransparentFX
