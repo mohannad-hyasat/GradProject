@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 148620282}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.92, y: 2.53, z: 5.31}
+  m_LocalPosition: {x: -4.92, y: 2.615, z: 5.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -442,6 +442,12 @@ Transform:
   - {fileID: 1664032183}
   m_Father: {fileID: 148620283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &957394119 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1663740031747659638, guid: 798a497cc6963584ab35377b605a346d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2020679529159169056}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1059224683
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +701,7 @@ GameObject:
   - component: {fileID: 1664032186}
   - component: {fileID: 1664032185}
   - component: {fileID: 1664032184}
+  - component: {fileID: 1664032187}
   m_Layer: 0
   m_Name: panel
   m_TagString: door
@@ -710,8 +717,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664032182}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.95, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.95, y: -0.027, z: 0}
   m_LocalScale: {x: 2, y: 3, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -789,6 +796,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664032182}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1664032187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664032182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7417b8a14eece24489fa29fe35b2aec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCam: {fileID: 957394119}
+  distChecker: {fileID: 1575865730}
+  hinge: {fileID: 635975786}
+  openSpeed: 30
+  rotationConstraints: {x: -120, y: 120}
 --- !u!1001 &2020679529159169056
 PrefabInstance:
   m_ObjectHideFlags: 0

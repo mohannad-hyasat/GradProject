@@ -42,9 +42,11 @@ public class DoorScript : MonoBehaviour
             targetPosition = playerCam.position + playerCam.forward * 2f;
         }
         rotation += Mathf.Clamp(-GetRotation() * 5000 * Time.deltaTime, -openSpeed, openSpeed);
+        rotation = Mathf.Clamp(rotation, rotationConstraints.x, rotationConstraints.y);
+        hinge.rotation = Quaternion.Euler(0, rotation, 0);
     }
 
-    private float GetRotation()
+    float GetRotation()
     {
         float firstDistance = (distChecker.position - targetPosition).sqrMagnitude;
         hinge.Rotate(Vector3.up);
