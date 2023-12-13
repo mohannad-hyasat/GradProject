@@ -21,8 +21,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    [HideInInspector] public CharacterController Player;
-    [HideInInspector] public UniversalHealth PlayerHealth;
+    [HideInInspector] public UniversalHealth Player;
     [HideInInspector] public PlayerMovement MovementScript;
     public Transform PlayerCamera;
 
@@ -35,8 +34,7 @@ public class GameManager : MonoBehaviour
         }
         else instance = this;
 
-        PlayerHealth = Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>());
-        Player = PlayerHealth.GetComponent<CharacterController>();
+        Player = Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>());
         PlayerCamera = GameObject.FindWithTag("Camera").transform;
         
 

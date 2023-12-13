@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using System.Timers;
 
 public class EnemyAiManager : MonoBehaviour
 {
@@ -9,92 +8,67 @@ public class EnemyAiManager : MonoBehaviour
     [Header("Misc Attributes")]
     public NavMeshAgent Enemy;
     public Transform Player;
+    public Animator Anim;
     public LayerMask WhatIsGround;
     public LayerMask WhatIsPlayer;
     public UniversalHealth Enemy_Health;
     [Header("Attack Attributes")]
-    public float AttackRange;
     public bool IsHaunting;
-    public bool IsAttacking;
-
     public float RotationSpeed;
     
-
-    [Header("Patrol Attributes")]
-    public Transform[] Walkpoints;
-    [HideInInspector] public int NextWalkpoint = 0;
-    [HideInInspector] public Transform Current_walkpoint;
-    [HideInInspector] public float DistanceFromWalkPoint;
-    public bool Reached;
-    public float TimeBetweenWalkpoints;
-
     [Header("Distance From Player")]
     public float DistanceFromPlayer;
+    [Header("Rooms")]
     public Transform Favorite_Room;
     public Transform[] Rooms;
 
-
+    [Header("Point Randomizer")]
+    public float Range; //radius of sphere
+    public Transform CentrePoint;
     private void Start()
     {
         Enemy = GetComponent<NavMeshAgent>();
         Player = GameManager.Instance.Player.transform;
-
-        Current_walkpoint = Walkpoints[0];
     }
     public void Enemy_Patroling()
     {
 
-
-        if (Reached)
-        {
-            StartCoroutine(Patrol());
-            Enemy_Health.Anim.SetBool("Walking", false);
-            Enemy_Health.Anim.SetBool("Running", false);
-
-        }
-        else
-        {
-            Enemy.SetDestination(Current_walkpoint.position);
-            Enemy_Health.Anim.SetBool("Walking", true);
-        }
+        
+            Vector3 point;
+            if (RandomPoint(CentrePoint.position, Range, out point)) //pass in our centre point and radius of area
+            {
+                
+                Enemy.SetDestination(point);
+            }
+            
+        
 
     }
-    IEnumerator Patrol()
+    bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
-        if (Walkpoints.Length == 0)
+
+        Vector3 randomPoint = center + Random.insideUnitSphere * range;
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
         {
-            yield return null;
+            result = hit.position;
+            return true;
         }
 
-
-        yield return new WaitForSecondsRealtime(TimeBetweenWalkpoints);
-
-        if (Reached)
-        {
-            NextWalkpoint = (NextWalkpoint + 1) % Walkpoints.Length;
-            Current_walkpoint = Walkpoints[NextWalkpoint];
-
-        }
-
-        yield return new WaitForSecondsRealtime(TimeBetweenWalkpoints);
+        result = Vector3.zero;
+        return false;
     }
-
    
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(gameObject.transform.position, AttackRange);
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(gameObject.transform.position, UnintrestedRange);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(gameObject.transform.position, FollowRange);
-    }
-
     private void FixedUpdate()
     {
         DistanceFromPlayer = Vector3.Distance(Player.position, gameObject.transform.position);
-       
+        if (Enemy.remainingDistance <= Enemy.stoppingDistance) //done with path
+        {
+            Enemy_Patroling();
+            Anim.SetBool("walk", false);
+        }
+        else
+            Anim.SetBool("walk", true);
 
     }
 }
