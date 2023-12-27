@@ -1,3 +1,4 @@
+using Google.Protobuf.WellKnownTypes;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -19,30 +20,30 @@ public class EnemyAiManager : MonoBehaviour
     [Header("Distance From Player")]
     public float DistanceFromPlayer;
     [Header("Rooms")]
-    public Transform Favorite_Room;
-    public Transform[] Rooms;
+    public Transform Fav_Room;
+    public float Range;
+    public  RoomsManager RoomManager;
 
-    [Header("Point Randomizer")]
-    public float Range; //radius of sphere
-    public Transform CentrePoint;
+   
     private void Start()
     {
         Enemy = GetComponent<NavMeshAgent>();
         Player = GameManager.Instance.Player.transform;
+        RoomManager = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
+        Fav_Room = RoomManager.Favorite_Room;
+       
     }
     public void Enemy_Patroling()
     {
 
         
             Vector3 point;
-            if (RandomPoint(CentrePoint.position, Range, out point)) //pass in our centre point and radius of area
+            if (RandomPoint(Fav_Room.position, Range, out point)) //pass in our centre point and radius of area
             {
                 
                 Enemy.SetDestination(point);
             }
             
-        
-
     }
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {

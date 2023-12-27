@@ -8,6 +8,7 @@ TagManager:
   - Hinge
   - DistanceChecker
   - Camera
+  - World
   layers:
   - Default
   - TransparentFX
