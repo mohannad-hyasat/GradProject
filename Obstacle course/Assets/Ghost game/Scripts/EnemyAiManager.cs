@@ -62,7 +62,9 @@ public class EnemyAiManager : MonoBehaviour
    
     private void FixedUpdate()
     {
+        
         DistanceFromPlayer = Vector3.Distance(Player.position, gameObject.transform.position);
+        
         if (Enemy.remainingDistance <= Enemy.stoppingDistance) //done with path
         {
             Enemy_Patroling();

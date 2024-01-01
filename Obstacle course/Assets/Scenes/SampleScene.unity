@@ -382,6 +382,7 @@ MonoBehaviour:
   standingCenter: {x: 0, y: 1, z: 0}
   animator: {fileID: 0}
   PlayerHealth: {fileID: 0}
+  Favroom: {fileID: 0}
 --- !u!23 &386698898
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1169,13 +1170,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8911ed4b9503fc4f919700d0ffdf3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DistanceBetweenPlayerAndRoom: 0
   Favorite_Room: {fileID: 0}
   Rooms:
   - {fileID: 273543102}
-  - {fileID: 273543102}
+  - {fileID: 110644388}
   - {fileID: 988316137}
   - {fileID: 2108430513}
   - {fileID: 578561412}
+  Temp_C: 15
+  DistanceToTrigger: 5
 --- !u!1 &2108430512
 GameObject:
   m_ObjectHideFlags: 0

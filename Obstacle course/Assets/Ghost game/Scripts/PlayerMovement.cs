@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float walkspeed;
     public float runSpeed;
     public float crouchSpeed;
-    //[HideInInspector]
+    [HideInInspector]
     public bool isGrounded;
     public LayerMask groundMask;
    [HideInInspector] 
@@ -26,18 +27,19 @@ public class PlayerMovement : MonoBehaviour
     private bool isCrouching = false;
     private bool duringCrouchAnimation;
     private bool shouldCrouch => Input.GetKeyDown(KeyCode.LeftControl) && !duringCrouchAnimation && isGrounded;
-    //[HideInInspector]
+    [HideInInspector]
     public Animator animator;
     private CharacterController characterController;
-    //[HideInInspector]
+    [HideInInspector]
     public UniversalHealth PlayerHealth;
-
+    public RoomsManager Favroom;
     // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         PlayerHealth = GetComponentInParent<UniversalHealth>();
+        Favroom = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
     }
 
     // Update is called once per frame
@@ -159,6 +161,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
+        Favroom.DistanceBetweenPlayerAndRoom = Vector3.Distance(Favroom.Favorite_Room.position, gameObject.transform.position); //check distance betweeen player and ghost room
+
         if (!PlayerHealth.IsDead)
         {
             CrouchHandler();
