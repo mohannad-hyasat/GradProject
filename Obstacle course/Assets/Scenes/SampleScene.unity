@@ -1180,6 +1180,8 @@ MonoBehaviour:
   - {fileID: 578561412}
   Temp_C: 15
   DistanceToTrigger: 5
+  GhostType: 0
+  Moths: {fileID: 0}
 --- !u!1 &2108430512
 GameObject:
   m_ObjectHideFlags: 0
