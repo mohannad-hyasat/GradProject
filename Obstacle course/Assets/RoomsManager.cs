@@ -16,9 +16,15 @@ public class RoomsManager : MonoBehaviour
     public const float Min_Temp = -15;
     public int DistanceToTrigger;
 
-    [Header("GHost Choice Settings")]
+    [Header("Ghost Choice Settings")]
     public Ghost_Type GhostType;
-    public GameObject Moths;
+    [HideInInspector] public GameObject Moths;
+
+    [Header("EMF Contorols")]
+    public int Emf_Level;
+    private const int Max_Emf = 5;
+    private const int Min_Emf = 1;
+    public int EmfRange;
     private void Awake()
     {
         Favorite_Room = Rooms[Random.Range(0, Rooms.Length)]; // randomize favorite room
@@ -30,6 +36,7 @@ public class RoomsManager : MonoBehaviour
         {
             Moths = GameObject.Instantiate(Resources.Load<GameObject>("Moths area"), Favorite_Room);
         }
+        Emf_Level = Min_Emf;
     }
     private void OnDrawGizmos()
     {
@@ -37,29 +44,84 @@ public class RoomsManager : MonoBehaviour
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(Favorite_Room.position, DistanceToTrigger);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(Favorite_Room.position, EmfRange);
         }
     }
-
     public void Kikimora()
     {
         if (DistanceBetweenPlayerAndRoom <= DistanceToTrigger)
         {
-
             if (Temp_C >= Min_Temp)
             {
-                Temp_C -= 0.1f;
+                Temp_C -= 0.01f;
             }
+        }
+        else
+        {
+            Temp_C = 20;
         }
     }
     public void Ogbanje()
     {
         if (DistanceBetweenPlayerAndRoom <= DistanceToTrigger)
         {
-
             if (Temp_C <= Max_Temp)
             {
-                Temp_C += 0.1f;
+                Temp_C += 0.01f;
             }
+        }
+        else
+        {
+            Temp_C = 20;
+        }
+    }
+
+    public void Jinn()
+    {
+        if (DistanceBetweenPlayerAndRoom <= DistanceToTrigger)
+        {
+            
+            if (Temp_C <= Max_Temp)
+            {
+                Temp_C += 0.01f;
+            }
+            if (DistanceBetweenPlayerAndRoom <= EmfRange)
+            {
+
+                if (Emf_Level <= Max_Emf)
+                {
+                    Emf_Level = Max_Emf;
+                }
+
+            }
+            else
+            {
+                Emf_Level = Min_Emf;
+            }
+
+        }
+        else
+        {
+            Temp_C = 20;
+        }
+
+
+    }
+    public void Mylinger()
+    {
+        if (DistanceBetweenPlayerAndRoom <= EmfRange)
+        {
+
+            if (Emf_Level <= Max_Emf)
+            {
+                Emf_Level = Max_Emf;
+            }
+
+        }
+        else
+        {
+            Emf_Level = Min_Emf;
         }
     }
     public void GhostIdentifier()
@@ -74,17 +136,20 @@ public class RoomsManager : MonoBehaviour
             Ogbanje();
         }
 
-
-
-
+        if(GhostType == Ghost_Type.Jinn)
+        {
+            Jinn();
+        }
+        if(GhostType == Ghost_Type.mylingar)
+        {
+            Mylinger();
+        }
     }
 
 
     private void Update()
     {
        GhostIdentifier();
-
-
     }
 }
 public enum Ghost_Type
