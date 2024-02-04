@@ -9,6 +9,7 @@ TagManager:
   - DistanceChecker
   - Camera
   - World
+  - FlashLight
   layers:
   - Default
   - TransparentFX

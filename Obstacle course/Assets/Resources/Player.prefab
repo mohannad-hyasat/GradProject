@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 193015807211396318}
   - component: {fileID: 610423342919561356}
   - component: {fileID: 4235560229307787324}
+  - component: {fileID: 7841602817517128529}
   m_Layer: 3
   m_Name: Camera
   m_TagString: Camera
@@ -238,6 +239,19 @@ MonoBehaviour:
   Y_Rotation: 0
   mouseSensitivity: 90
   Head: {fileID: 329796304137226331}
+--- !u!114 &7841602817517128529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7615311810883305327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9a177f02d58ad44b447f4ddea98485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractRange: 2
 --- !u!1001 &2439380424750098677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -763,6 +777,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
+      propertyPath: m_TagString
+      value: FlashLight
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_LocalPosition.x
