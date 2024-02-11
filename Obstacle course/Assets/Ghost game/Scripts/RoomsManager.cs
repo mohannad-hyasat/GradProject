@@ -26,6 +26,7 @@ public class RoomsManager : MonoBehaviour
     private const int Min_Emf = 1;
     public int EmfRange;
 
+    [Header("Discoverables settings")]
     public bool DollDiscovered = false;
     public bool MaskDiscovered = false;
     private void Awake()
@@ -149,6 +150,7 @@ public class RoomsManager : MonoBehaviour
         else
         {
             Temp_C = Random.Range(10f,30f);
+            Emf_Level = Random.Range(Min_Emf, 4);
         }
        
     }
@@ -175,8 +177,6 @@ public class RoomsManager : MonoBehaviour
         {
             Emf_Level = Random.Range(Min_Emf, 4);
         }
-
-        
     }
     public void GhostIdentifier()
     {

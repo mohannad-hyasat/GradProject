@@ -1,23 +1,21 @@
 using UnityEngine;
 
-public class DollInteractable : MonoBehaviour,IInteractable
+public class MaskInteractable : MonoBehaviour,IInteractable
 {
     public RoomsManager Rm;
-    public ParticleSystem DollDestroyVFX;
+    public ParticleSystem MaskDestroyVFX;
     private void Start()
     {
         Rm = FindObjectOfType<RoomsManager>().GetComponent<RoomsManager>();
     }
     public void Interact()
     {
-        Rm.DollDiscovered = true;
-       // DollDestroyVFX.Play();
-        Invoke(nameof(DestoryDoll), 1f);
+        Rm.MaskDiscovered = true;
+        // MaskDestroyVFX.Play();
+        Invoke(nameof(DestoryMask), 1f);
     }
-
-    void DestoryDoll()
+    void DestoryMask()
     {
         Destroy(gameObject);
     }
-
 }
