@@ -33,8 +33,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public UniversalHealth PlayerHealth;
     public RoomsManager Favroom;
-    [HideInInspector]
-    public GameObject[] items = new GameObject[2];
+    public GameObject[] items = new GameObject[3];
 
 
     // Start is called before the first frame update
@@ -68,15 +67,15 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            items[1].SetActive(false);
+            items[1].SetActive(true);
             items[2].SetActive(false);
-            items[0].SetActive(true);
+            items[0].SetActive(false);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             items[1].SetActive(false);
-            items[2].SetActive(false);
-            items[0].SetActive(true);
+            items[2].SetActive(true);
+            items[0].SetActive(false);
         }
 
     }
