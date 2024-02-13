@@ -33,13 +33,48 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public UniversalHealth PlayerHealth;
     public RoomsManager Favroom;
+    [HideInInspector]
+    public int[] itemsPickedUp = new int[2];
+
+    public GameObject F_light;
+    public GameObject emf;
+    public GameObject thermometer;
     // Start is called before the first frame update
     void Start()
     {
+        
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         PlayerHealth = GetComponentInParent<UniversalHealth>();
         Favroom = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
+        F_light = GameObject.FindGameObjectWithTag("FlashLight");
+        thermometer = GameObject.FindGameObjectWithTag("thermometer");
+        emf = GameObject.FindGameObjectWithTag("emf");
+    }
+    /// <summary>
+    /// function that handles all the switching between items mechanic
+    /// </summary>
+    private void SwitchingItems()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1) && itemsPickedUp[0] == 1) 
+        {
+            emf.SetActive(false);
+            thermometer.SetActive(false);
+            F_light.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && itemsPickedUp[1] == 1)
+        {
+            emf.SetActive(false);
+            thermometer.SetActive(false);
+            F_light.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && itemsPickedUp[2] == 1)
+        {
+            emf.SetActive(false);
+            thermometer.SetActive(false);
+            F_light.SetActive(true);
+        }
+
     }
 
     // Update is called once per frame
@@ -167,6 +202,7 @@ public class PlayerMovement : MonoBehaviour
         {
             CrouchHandler();
             Move();
+            SwitchingItems();
         }
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up), out hit, 0.08f, groundMask))
