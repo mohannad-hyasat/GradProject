@@ -34,11 +34,9 @@ public class PlayerMovement : MonoBehaviour
     public UniversalHealth PlayerHealth;
     public RoomsManager Favroom;
     [HideInInspector]
-    public int[] itemsPickedUp = new int[2];
+    public GameObject[] items = new GameObject[2];
 
-    public GameObject F_light;
-    public GameObject emf;
-    public GameObject thermometer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,32 +45,35 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         PlayerHealth = GetComponentInParent<UniversalHealth>();
         Favroom = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
-        F_light = GameObject.FindGameObjectWithTag("FlashLight");
-        thermometer = GameObject.FindGameObjectWithTag("thermometer");
-        emf = GameObject.FindGameObjectWithTag("emf");
+        for(int i = 0; i < items.Length; i++)
+        {
+            items[i].SetActive(false);
+        }
+
+
     }
     /// <summary>
     /// function that handles all the switching between items mechanic
     /// </summary>
     private void SwitchingItems()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && itemsPickedUp[0] == 1) 
+        if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
-            emf.SetActive(false);
-            thermometer.SetActive(false);
-            F_light.SetActive(true);
+            items[1].SetActive(false);
+            items[2].SetActive(false);
+            items[0].SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && itemsPickedUp[1] == 1)
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            emf.SetActive(false);
-            thermometer.SetActive(false);
-            F_light.SetActive(true);
+            items[1].SetActive(false);
+            items[2].SetActive(false);
+            items[0].SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && itemsPickedUp[2] == 1)
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            emf.SetActive(false);
-            thermometer.SetActive(false);
-            F_light.SetActive(true);
+            items[1].SetActive(false);
+            items[2].SetActive(false);
+            items[0].SetActive(true);
         }
 
     }

@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6507617414274029280}
   - component: {fileID: 3178405749571605752}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: emf
   m_TagString: emf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 9076563122938882558}
   - component: {fileID: 8985493222185672506}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: thermometer
   m_TagString: thermometer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -927,9 +927,9 @@ MonoBehaviour:
   PlayerHealth: {fileID: 0}
   Favroom: {fileID: 0}
   itemsPickedUp: 0000000000000000
-  F_light: {fileID: 0}
-  emf: {fileID: 0}
-  thermometer: {fileID: 0}
+  F_light: {fileID: 5235149511567606557}
+  emf: {fileID: 5830377213781247884}
+  thermometer: {fileID: 7259048687433336086}
 --- !u!143 &2228845846464009513
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1046,6 +1046,12 @@ PrefabInstance:
 --- !u!4 &5235149511567580989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5235149511567705533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5235149511567606557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: b694b8ec5c41f6247843a2b67222fda6,
     type: 3}
   m_PrefabInstance: {fileID: 5235149511567705533}
   m_PrefabAsset: {fileID: 0}
