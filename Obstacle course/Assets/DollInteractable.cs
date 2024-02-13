@@ -11,7 +11,7 @@ public class DollInteractable : MonoBehaviour,IInteractable
     public void Interact()
     {
         Rm.DollDiscovered = true;
-       // DollDestroyVFX.Play();
+        DollDestroyVFX.Play();
         Invoke(nameof(DestoryDoll), 1f);
     }
 

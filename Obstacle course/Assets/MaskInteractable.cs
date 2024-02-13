@@ -11,7 +11,7 @@ public class MaskInteractable : MonoBehaviour,IInteractable
     public void Interact()
     {
         Rm.MaskDiscovered = true;
-        // MaskDestroyVFX.Play();
+        MaskDestroyVFX.Play();
         Invoke(nameof(DestoryMask), 1f);
     }
     void DestoryMask()

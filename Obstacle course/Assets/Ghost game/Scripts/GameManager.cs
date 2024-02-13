@@ -37,8 +37,6 @@ public class GameManager : MonoBehaviour
         Player = Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>());
         PlayerCamera = GameObject.FindWithTag("Camera").transform;
         
-
-
     }
 
 }

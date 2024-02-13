@@ -27,19 +27,30 @@ public class RoomsManager : MonoBehaviour
     public int EmfRange;
 
     [Header("Discoverables settings")]
+    public GameObject Mask;
+    public GameObject Doll;
     public bool DollDiscovered = false;
     public bool MaskDiscovered = false;
+    public Transform[] AllSpawnablesLocations;
+    public Transform DollSpawnLocation;
+    public Transform MaskSpawnLocation;
     private void Awake()
     {
         Favorite_Room = Rooms[Random.Range(0, Rooms.Length)]; // randomize favorite room
         GhostType = (Ghost_Type)Random.Range(0, 4);    // randomize ghost type
+        DollSpawnLocation = AllSpawnablesLocations[Random.Range(0, AllSpawnablesLocations.Length)];
+        MaskSpawnLocation = AllSpawnablesLocations[Random.Range(0, AllSpawnablesLocations.Length)];
+        if(MaskSpawnLocation == DollSpawnLocation)
+        {
+            RandmoizeSpawnableLocation();
+        }
+        
     }
     private void Start()
     {
-        /*if(GhostType == Ghost_Type.Kikimora || GhostType == Ghost_Type.Ogbanje || GhostType == Ghost_Type.mylingar)
-        {
-            Moths = GameObject.Instantiate(Resources.Load<GameObject>("Moths area"), Favorite_Room);
-        }*/
+        Mask = GameObject.Instantiate(Resources.Load<GameObject>("Mask"),MaskSpawnLocation);
+        Doll = GameObject.Instantiate(Resources.Load<GameObject>("Doll"), DollSpawnLocation);
+
         Emf_Level = Min_Emf;
     }
     private void OnDrawGizmos()
@@ -200,6 +211,13 @@ public class RoomsManager : MonoBehaviour
         }
     }
 
+    void RandmoizeSpawnableLocation()
+    {
+        while(MaskSpawnLocation == DollSpawnLocation)
+        {
+            MaskSpawnLocation = AllSpawnablesLocations[Random.Range(0, AllSpawnablesLocations.Length)];
+        }
+    }
 
     private void Update()
     {
