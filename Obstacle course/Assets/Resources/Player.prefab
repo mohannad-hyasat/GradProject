@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 193015807211396318}
   - component: {fileID: 610423342919561356}
   - component: {fileID: 4235560229307787324}
-  - component: {fileID: 7841602817517128529}
+  - component: {fileID: 7407945046830683522}
   m_Layer: 3
   m_Name: Camera
   m_TagString: Camera
@@ -451,7 +451,7 @@ MonoBehaviour:
   Y_Rotation: 0
   mouseSensitivity: 90
   Head: {fileID: 329796304137226331}
---- !u!114 &7841602817517128529
+--- !u!114 &7407945046830683522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -926,10 +926,9 @@ MonoBehaviour:
   animator: {fileID: 0}
   PlayerHealth: {fileID: 0}
   Favroom: {fileID: 0}
-  itemsPickedUp: 0000000000000000
-  F_light: {fileID: 5235149511567606557}
-  emf: {fileID: 5830377213781247884}
-  thermometer: {fileID: 7259048687433336086}
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!143 &2228845846464009513
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1046,12 +1045,6 @@ PrefabInstance:
 --- !u!4 &5235149511567580989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6,
-    type: 3}
-  m_PrefabInstance: {fileID: 5235149511567705533}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5235149511567606557 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: b694b8ec5c41f6247843a2b67222fda6,
     type: 3}
   m_PrefabInstance: {fileID: 5235149511567705533}
   m_PrefabAsset: {fileID: 0}

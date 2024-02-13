@@ -45,6 +45,9 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         PlayerHealth = GetComponentInParent<UniversalHealth>();
         Favroom = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
+        items[0] = GameObject.FindGameObjectWithTag("FlashLight");
+        items[1] = GameObject.FindGameObjectWithTag("emf");
+        items[2] = GameObject.FindGameObjectWithTag("thermometer");
         for(int i = 0; i < items.Length; i++)
         {
             items[i].SetActive(false);
