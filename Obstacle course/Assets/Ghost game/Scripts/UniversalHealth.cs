@@ -11,10 +11,14 @@ public class UniversalHealth : MonoBehaviour, I_AllStats
     public bool IsDead;
     public Animator Anim;
     public Chooser choice;
-
+    public const float Max_Sanity = 100f;
+    public float Sanity;
+    public float Time_Between_Sanity_Ticks;
     private void Start()
     { 
         Health = MaxHealth;
+        Sanity = Max_Sanity;
+        StartCoroutine(Insanity());
     }
     /// <summary>
     /// set the maximum health of the entity
@@ -23,6 +27,7 @@ public class UniversalHealth : MonoBehaviour, I_AllStats
     public void Set_Max_Health(float Hp)
     {
         Health = Hp;
+        
     }
     /// <summary>
     /// apply damage to the entity by the amount damage
@@ -42,11 +47,20 @@ public class UniversalHealth : MonoBehaviour, I_AllStats
         }
     }
 
-    private void Update()
+    public void Apply_Insanity(float sanity_Damage)
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        Apply_Damage(10f);
+        Sanity -= sanity_Damage;
     }
+   public  IEnumerator Insanity()
+    {
+        yield return new WaitForSeconds(Time_Between_Sanity_Ticks);
+        Apply_Insanity(1);
+        if (Sanity > 0)
+        {
+            StartCoroutine(Insanity());
+        }
+    }
+
 }
 public enum Chooser
 {

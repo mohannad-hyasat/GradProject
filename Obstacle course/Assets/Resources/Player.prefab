@@ -45,11 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73eafd9ab0f68b41a630cf406f4597d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 85.3
   Health: 0
   IsDead: 0
   Anim: {fileID: 329796304144230277}
   choice: 0
+  Sanity: 0
+  Time_Between_Sanity_Ticks: 5
 --- !u!1 &3458392496386296835
 GameObject:
   m_ObjectHideFlags: 0
