@@ -32,12 +32,12 @@ ExportedObj/
 *.unityproj
 *.sln
 *.suo
-*.fbx
 *.tmp
 *.user
 *.userprefs
 *.pidb
 *.booproj
+*.fbx
 *.svd
 *.pdb
 *.mdb
