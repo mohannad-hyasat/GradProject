@@ -32,6 +32,7 @@ ExportedObj/
 *.unityproj
 *.sln
 *.suo
+*.png
 *.fbx
 *.tmp
 *.user
