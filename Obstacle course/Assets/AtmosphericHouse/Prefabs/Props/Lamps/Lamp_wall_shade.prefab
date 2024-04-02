@@ -288,8 +288,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9568628, g: 0.87843144, b: 0.7137255, a: 1}
-  m_Intensity: 1
-  m_Range: 6
+  m_Intensity: 0.3
+  m_Range: 8
   m_SpotAngle: 167
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -300,7 +300,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.06
+    m_NearPlane: 0.08
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -327,7 +327,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
@@ -335,7 +335,7 @@ Light:
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0.2
+  m_ShadowRadius: 0.3
   m_ShadowAngle: 0
 --- !u!114 &3767153776854779449
 MonoBehaviour:

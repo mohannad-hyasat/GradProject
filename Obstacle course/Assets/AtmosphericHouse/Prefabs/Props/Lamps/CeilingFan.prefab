@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 7885974310063905818}
   - component: {fileID: 1533525795342664214}
   m_Layer: 0
-  m_Name: Point Light CeilingFan
+  m_Name: Spot Light CeilingFan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,13 +372,13 @@ Light:
   m_GameObject: {fileID: 7885974310063905823}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 2
+  m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.8773585, g: 0.856983, b: 0.6994037, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 1.8
   m_Range: 10
-  m_SpotAngle: 160
-  m_InnerSpotAngle: 67
+  m_SpotAngle: 167.65285
+  m_InnerSpotAngle: 114.44762
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -406,7 +406,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 8900000, guid: ec0040d7aba32fb47b98a497c055c0a4, type: 3}
+  m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -414,7 +414,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
