@@ -199,14 +199,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        Favroom.DistanceBetweenPlayerAndRoom = Vector3.Distance(Favroom.Favorite_Room.position, gameObject.transform.position); //check distance betweeen player and ghost room
+        Favroom.DistanceBetweenPlayerAndRoom = Vector3.Distance(Favroom.Favorite_Room.position, gameObject.transform.position); //check distance betweeen player and ghost room 
 
-        if (!PlayerHealth.IsDead)
-        {
-            CrouchHandler();
-            Move();
-            SwitchingItems();
-        }
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up), out hit, 0.08f, groundMask))
         {
@@ -218,5 +212,12 @@ public class PlayerMovement : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.up) * 0.08f, Color.red);
             isGrounded = false;
         }
+        if (!PlayerHealth.IsDead)
+        {
+            CrouchHandler();
+            Move();
+            SwitchingItems();
+        }
+        
     }
 }

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Dark - Complete Horror UI/Scenes/Built-in/Main Menu (Mobile).unity
+    guid: 6c32bdcb2b926064482257b20281d6cb
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
