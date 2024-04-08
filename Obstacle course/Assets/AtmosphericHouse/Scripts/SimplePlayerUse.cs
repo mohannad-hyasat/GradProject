@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SimplePlayerUse : MonoBehaviour
@@ -37,10 +38,16 @@ public class SimplePlayerUse : MonoBehaviour
 
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward), out hit, 2.3f))
         {
-            if (hit.collider.gameObject.GetComponent<SimpleOpenClose>())
+            if (hit.collider.gameObject.GetComponent<SimpleOpenClose>() )
             {
-               // Debug.Log("Object with SimpleOpenClose script found");
+               
+                //Debug.Log("Object with SimpleOpenClose script found");
                 hit.collider.gameObject.BroadcastMessage("ObjectClicked");
+            }
+            if( hit.collider.gameObject.GetComponent<LightSwitch>())
+            {
+                var Switch = hit.collider.gameObject.GetComponent<LightSwitch>();
+                Switch.OnOff =  !Switch.OnOff;
             }
 
             else

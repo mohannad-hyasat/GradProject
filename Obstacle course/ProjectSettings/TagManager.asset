@@ -12,6 +12,7 @@ TagManager:
   - FlashLight
   - emf
   - thermometer
+  - Light
   layers:
   - Default
   - TransparentFX
