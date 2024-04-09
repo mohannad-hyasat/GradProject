@@ -7129,7 +7129,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1728654777}
   m_Direction: 1
   m_Value: 0
-  m_Size: 0.4697646
+  m_Size: 0.46959046
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -25524,7 +25524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A GAME BY <b>[YOUR NAME]</b>
+  m_text: A GAME BY <b>[Hamza & Mohannad]</b>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 52cb95421939b3343ade2a7579e71c06, type: 2}
   m_sharedMaterial: {fileID: 21307179227807236, guid: 52cb95421939b3343ade2a7579e71c06,
@@ -37725,7 +37725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <b>[COMPANY]</b> PRESENTS
+  m_text: <b>[MADS]</b> PRESENTS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 52cb95421939b3343ade2a7579e71c06, type: 2}
   m_sharedMaterial: {fileID: 21307179227807236, guid: 52cb95421939b3343ade2a7579e71c06,
