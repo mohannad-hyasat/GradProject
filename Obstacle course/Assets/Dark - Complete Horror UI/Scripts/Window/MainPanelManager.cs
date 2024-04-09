@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 namespace Michsky.UI.Dark
 {
@@ -255,6 +256,10 @@ namespace Michsky.UI.Dark
         {
             yield return new WaitForSecondsRealtime(disablePanelAfter);
             currentPanel.SetActive(false);
+        }
+        public void PlayGame()
+        {
+            SceneManager.LoadScene(1);
         }
     }
 }
