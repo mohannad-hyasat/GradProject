@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: 919f4ad37046b0341810f796a22f7f70
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Arm_1
+    second: {fileID: 2100000, guid: e5b1c5346c086ee4ebba9fffdd17c93c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Body_1
+    second: {fileID: 2100000, guid: 333679f059b187a438af3beef3ded3c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Body_2
+    second: {fileID: 2100000, guid: dcf531f5613753342835cf80ffc5b3bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Feet_2
+    second: {fileID: 2100000, guid: 26783e82864f13049b6113932f74ec13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Leg_1
+    second: {fileID: 2100000, guid: b99feca2ddb62734f8aa3472665810d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Leg_2
+    second: {fileID: 2100000, guid: bf7115d61db27eb4d9f373f0b81ec32a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Arm_1
+    second: {fileID: 2100000, guid: 2c3e7db8845b3a94aaa277ed1613faff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Arm_2
+    second: {fileID: 2100000, guid: 08f6815c7d72d6141ad49a134eb2bf3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Body_1
+    second: {fileID: 2100000, guid: 6fe9f179f15b9c149b82c2968758a2be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Body_2
+    second: {fileID: 2100000, guid: dd885972e838e384ebca2c4b8cb49671, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Feet_1
+    second: {fileID: 2100000, guid: 48c5b7475409b254f9a0abd676a5c99b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Feet_2
+    second: {fileID: 2100000, guid: 64f0a933704816a4bb5e7b1a00377d9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Hand_1
+    second: {fileID: 2100000, guid: 4c377c48e9034e7418123a2306c9b7ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Hand_2
+    second: {fileID: 2100000, guid: 568b7404a790bc04d8833bc0a42cd43b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Leg_1
+    second: {fileID: 2100000, guid: 26ec069b190ada24c8d266679468f8c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Leg_2
+    second: {fileID: 2100000, guid: 94ba821e035161440980b5b75110ebb4, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Arm_1_Base_Color
+    second: {fileID: 2800000, guid: b5bd6436842060d4697840b8591489c2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Arm_1_Normal_DirectX
+    second: {fileID: 2800000, guid: 925cc2ee4c04e5042accb4b3ce6e654d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Body_1_Base_Color
+    second: {fileID: 2800000, guid: 7be5c2dbd024958479a1599eddc57525, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Body_1_Normal_DirectX
+    second: {fileID: 2800000, guid: 2265cccc6cd16014a9a14b8f1a8ac30e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Body_2_Base_Color
+    second: {fileID: 2800000, guid: a8b3b3a2e2ed6f541a56b32d005b17ff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Body_2_Normal_DirectX
+    second: {fileID: 2800000, guid: 4d590ce516843cf479baaf0bab5cc4ca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Feet_2_Base_Color
+    second: {fileID: 2800000, guid: 81f1411b6c6d9d54bb77f6e21bea6bb5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Feet_2_Normal_DirectX
+    second: {fileID: 2800000, guid: 2c943926176e2864ea0f42093ecb267c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Leg_1_Base_Color
+    second: {fileID: 2800000, guid: 0adaa100b17228d4f925edf1784fd065, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Leg_1_Normal_DirectX
+    second: {fileID: 2800000, guid: 056a21e3cd9ff6749a5c6e4a17213a7d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Leg_2_Base_Color
+    second: {fileID: 2800000, guid: 37264184240bf2a4fb42bdc5961cb86b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Man_Severed_Leg_2_Normal_DirectX
+    second: {fileID: 2800000, guid: 8522e3118b599c84895c729e068cc54c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Arm_1_Base_Color
+    second: {fileID: 2800000, guid: 41b0bbe75b1c3ec4683a29048916aefe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Arm_1_Normal_DirectX
+    second: {fileID: 2800000, guid: 76f47a0fd5d4d864ba8934ae30ad1e1d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Arm_2_Base_Color
+    second: {fileID: 2800000, guid: d99c057b74d74f2498b7d21b6c439129, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Arm_2_Normal_DirectX
+    second: {fileID: 2800000, guid: 0c41df98db3f254458cfe38c70d15370, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Body_1_Base_Color
+    second: {fileID: 2800000, guid: c1bbc33b7c5613e48a75e3cec28bfc1e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Body_1_Normal_DirectX
+    second: {fileID: 2800000, guid: f49135b8719975a498c81d542ee817e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Body_2_Base_Color
+    second: {fileID: 2800000, guid: 8935092c7e1b1aa43a4dd5c62f316693, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Body_2_Normal_DirectX
+    second: {fileID: 2800000, guid: 3c064c85a20e9184c82ff8660d2a4a64, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Feet_1_Base_Color
+    second: {fileID: 2800000, guid: e45361f40b1ed11469d7951cc208c24d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Feet_1_Normal_DirectX
+    second: {fileID: 2800000, guid: 7fda739e366ebb447845ff5d7465065f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Feet_2_Base_Color
+    second: {fileID: 2800000, guid: 3a34ad861502fe243a217c59da3729bf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Feet_2_Normal_DirectX
+    second: {fileID: 2800000, guid: 4c6b9fede10855441a67d5dcd49a1289, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Hand_1_Base_Color
+    second: {fileID: 2800000, guid: 7d86431b00749fa47a084ce20e71aef7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Hand_1_Normal_DirectX
+    second: {fileID: 2800000, guid: dde71811b9a5808429f0e26c746bbaa9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Hand_2_Base_Color
+    second: {fileID: 2800000, guid: 710d77a4cf400d14f8fb3d550850ab25, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Hand_2_Normal_DirectX
+    second: {fileID: 2800000, guid: cf8041054ac19024b87f5fe94a568dfd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Leg_1_Base_Color
+    second: {fileID: 2800000, guid: 85fedf71433ec92479ce300c16fd835e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Leg_1_Normal_DirectX
+    second: {fileID: 2800000, guid: a0fb51c5715cca84cad813779e94303d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Leg_2_Base_Color
+    second: {fileID: 2800000, guid: d52630e863794484195edf7d76f23e69, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Woman_Severed_Leg_2_Normal_DirectX
+    second: {fileID: 2800000, guid: 15ed387be8ba5ee4f9bfdc0d9cd1d894, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
