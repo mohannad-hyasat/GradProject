@@ -118,7 +118,7 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: -56
+    value: -74
   tint:
     overrideState: 1
     value: 0
@@ -1397,7 +1397,7 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 2.27
+    value: 1.34
   color:
     overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -1443,10 +1443,10 @@ MonoBehaviour:
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 53.99999, y: 99}
+    value: {x: 53.999973, y: 99}
   minLuminance:
     overrideState: 1
-    value: 0.6
+    value: 0.9
   maxLuminance:
     overrideState: 1
     value: 9
