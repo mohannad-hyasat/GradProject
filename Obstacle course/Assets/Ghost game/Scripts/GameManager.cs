@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public PlayerMovement MovementScript;
     public Transform PlayerCamera;
 
+    public Transform Fav_Room;
+    public RoomsManager RoomManager;
+
 
     private void Awake()
     {
@@ -34,9 +37,15 @@ public class GameManager : MonoBehaviour
         }
         else instance = this;
 
-        Player = Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>());
+        Invoke("SpawnPlayer", 2);
+
+    }
+    private void SpawnPlayer() 
+    {
+        RoomManager = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
+        Fav_Room = RoomManager.Favorite_Room;
+        Player = GameObject.Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>(), Fav_Room);
         PlayerCamera = GameObject.FindWithTag("Camera").transform;
-        
     }
 
 }
