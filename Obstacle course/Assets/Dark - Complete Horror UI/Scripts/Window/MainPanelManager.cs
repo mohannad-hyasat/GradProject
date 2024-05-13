@@ -261,5 +261,10 @@ namespace Michsky.UI.Dark
         {
             SceneManager.LoadScene(1);
         }
+        public void ResumeGame()
+        {
+            PauseMenuScript game = GameObject.FindGameObjectWithTag("GameWorld").GetComponent<PauseMenuScript>();
+            game.ResumeGame();
+        }
     }
 }

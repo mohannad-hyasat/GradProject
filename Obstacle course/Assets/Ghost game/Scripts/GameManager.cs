@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -29,6 +30,9 @@ public class GameManager : MonoBehaviour
     public RoomsManager RoomManager;
 
 
+ 
+
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -42,11 +46,10 @@ public class GameManager : MonoBehaviour
     }
     private void SpawnPlayer() 
     {
-        RoomManager = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
-        Fav_Room = RoomManager.Favorite_Room;
-        Player = GameObject.Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>(), Fav_Room);
+        Player = GameObject.Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>());
         PlayerCamera = GameObject.FindWithTag("Camera").transform;
     }
+
 
 }
 

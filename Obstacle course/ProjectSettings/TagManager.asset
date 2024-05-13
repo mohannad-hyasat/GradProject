@@ -13,6 +13,9 @@ TagManager:
   - emf
   - thermometer
   - Light
+  - GameWorld
+  - PauseMenu
+  - EndGameText
   layers:
   - Default
   - TransparentFX
