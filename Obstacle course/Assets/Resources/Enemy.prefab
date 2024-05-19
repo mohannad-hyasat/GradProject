@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 8304092321297182449}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,6 +269,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2929479831780853659}
+    - targetCorrespondingSourceObject: {fileID: 4363578991983522480, guid: 6924745a509f7b746bc74f3d4548b1aa,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7013992297141147511}
   m_SourcePrefab: {fileID: 100100000, guid: 6924745a509f7b746bc74f3d4548b1aa, type: 3}
 --- !u!4 &1569257626588596675 stripped
 Transform:
@@ -332,6 +336,25 @@ MonoBehaviour:
   Fav_Room: {fileID: 0}
   Range: 10
   RoomManager: {fileID: 0}
+--- !u!114 &7013992297141147511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566003573694675920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca5a76fe36b2d944ab9991a83f64183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+  playerTransform: {fileID: 0}
+  speed: 2
+  Ghost: {fileID: 0}
 --- !u!95 &8884789246267122873 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7232730286969761241, guid: 6924745a509f7b746bc74f3d4548b1aa,

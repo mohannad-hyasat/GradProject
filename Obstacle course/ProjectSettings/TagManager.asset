@@ -13,6 +13,7 @@ TagManager:
   - emf
   - thermometer
   - Light
+  - Enemy
   layers:
   - Default
   - TransparentFX
