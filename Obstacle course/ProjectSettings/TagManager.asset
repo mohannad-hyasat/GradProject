@@ -17,6 +17,7 @@ TagManager:
   - PauseMenu
   - EndGameText
   - AudioManager
+  - boundary
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - FlashLight
   - PlayerCull
   - Ground
-  - 
+  - ghost
   - 
   - 
   - 

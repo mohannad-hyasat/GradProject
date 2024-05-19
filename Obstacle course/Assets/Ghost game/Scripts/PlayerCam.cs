@@ -11,10 +11,14 @@ public class PlayerCam : MonoBehaviour
     public float Y_Rotation = 0f;
     [Header("Mouse sensitivity")]
     public float mouseSensitivity;
+    public Camera cam;
+    public bool haunting;
+    public MLAgent ghostScript;
 
     public Transform Head;
     void Start()
     {
+        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         PlayerOriantation = transform.parent;
@@ -40,5 +44,22 @@ public class PlayerCam : MonoBehaviour
         {
             RotatePlayerAndCamera(); 
         }
+
+        if (ghostScript.IsHaunting)
+        {
+            Show();
+        }
+        else
+        {
+            Hide();
+        }
+    }
+    public void Hide()
+    {
+        cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Ghost"));
+    }
+    public void Show()
+    {
+        cam.cullingMask |= 1 << LayerMask.NameToLayer("Ghost");
     }
 }

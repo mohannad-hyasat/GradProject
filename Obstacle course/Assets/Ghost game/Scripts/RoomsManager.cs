@@ -36,7 +36,7 @@ public class RoomsManager : MonoBehaviour
     public Transform MaskSpawnLocation;
     private void Awake()
     {
-        Favorite_Room = Rooms[Random.Range(0, Rooms.Length)]; // randomize favorite room
+        SetFavRoom(); // randomize favorite room
         GhostType = (Ghost_Type)Random.Range(0, 4);    // randomize ghost type
         DollSpawnLocation = AllSpawnablesLocations[Random.Range(0, AllSpawnablesLocations.Length)];
         MaskSpawnLocation = AllSpawnablesLocations[Random.Range(0, AllSpawnablesLocations.Length)];
@@ -209,6 +209,10 @@ public class RoomsManager : MonoBehaviour
         {
             Mylinger();
         }
+    }
+    public void SetFavRoom()
+    {
+        Favorite_Room = Rooms[Random.Range(0, Rooms.Length)]; // randomize favorite room
     }
 
     void RandmoizeSpawnableLocation()

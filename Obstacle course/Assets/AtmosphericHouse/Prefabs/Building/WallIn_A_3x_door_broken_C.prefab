@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7072196830185430498}
   m_Layer: 0
   m_Name: WallIn_A_3x_door_broken_C
-  m_TagString: Untagged
+  m_TagString: boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -30,15 +30,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7072196830185430499}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2112946605097981024}
   - {fileID: 7200231223746468263}
   - {fileID: 8754081182454104462}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7072196830185430500
 MonoBehaviour:
@@ -98,10 +99,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -128,6 +131,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &7072196830185430503
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -136,9 +140,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7072196830185430499}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.92, y: 2.8, z: 0.03}
   m_Center: {x: -2.55, y: 1.4, z: 0.1}
 --- !u!65 &7072196830185430496
@@ -149,9 +161,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7072196830185430499}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.92, y: 2.8, z: 0.03}
   m_Center: {x: -0.45, y: 1.4, z: 0.1}
 --- !u!65 &7072196830185430497
@@ -162,9 +182,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7072196830185430499}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 3, y: 0.58, z: 0.03}
   m_Center: {x: -1.5, y: 2.52, z: 0.1}
 --- !u!114 &7072196830185430498
@@ -211,6 +239,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7072196830185430299}
     m_Modifications:
     - target: {fileID: 8371628805763374902, guid: 779d13d63e6fe964cbfb3e5aae43a84a,
@@ -289,6 +318,9 @@ PrefabInstance:
       value: 179.99998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 779d13d63e6fe964cbfb3e5aae43a84a, type: 3}
 --- !u!4 &7200231223746468263 stripped
 Transform:
@@ -301,6 +333,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7072196830185430299}
     m_Modifications:
     - target: {fileID: 4678249369866826580, guid: e4b6891d058aae34ea168c0d31560d9b,
@@ -364,6 +397,9 @@ PrefabInstance:
       value: 182.066
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4b6891d058aae34ea168c0d31560d9b, type: 3}
 --- !u!4 &2112946605097981024 stripped
 Transform:
@@ -376,6 +412,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7072196830185430299}
     m_Modifications:
     - target: {fileID: 1438556306890130622, guid: 7c7b6a206c4b2b046895975701ca374b,
@@ -454,6 +491,9 @@ PrefabInstance:
       value: Decal_damage_wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7b6a206c4b2b046895975701ca374b, type: 3}
 --- !u!4 &8754081182454104462 stripped
 Transform:

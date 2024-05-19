@@ -1278,6 +1278,8 @@ MonoBehaviour:
   X_Rotation: 0
   Y_Rotation: 0
   mouseSensitivity: 90
+  cam: {fileID: 0}
+  haunting: 0
   Head: {fileID: 329796304137226331}
 --- !u!114 &7407945046830683522
 MonoBehaviour:
