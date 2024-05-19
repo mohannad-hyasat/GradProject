@@ -16,6 +16,7 @@ TagManager:
   - GameWorld
   - PauseMenu
   - EndGameText
+  - AudioManager
   layers:
   - Default
   - TransparentFX

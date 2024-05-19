@@ -2347,9 +2347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7554da1c73cd8449b53d2bfb8c1b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkspeed: 4
-  runSpeed: 8
-  crouchSpeed: 2
+  walkspeed: 2
+  runSpeed: 5
+  crouchSpeed: 1
   isGrounded: 0
   groundMask:
     serializedVersion: 2
@@ -2366,6 +2366,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  Fav_Room: {fileID: 0}
+  RoomManager: {fileID: 0}
+  AudioManager: {fileID: 0}
 --- !u!143 &2228845846464009513
 CharacterController:
   m_ObjectHideFlags: 0

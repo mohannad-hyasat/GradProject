@@ -32,13 +32,16 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        Play("StartMenu");
+        Play("music");
     }
     public void Play(string name)
     {
         Sounds_Stuff Sounds_Play = Array.Find(sounds, sounds => sounds.Name == name);
-
+        if (Sounds_Play == null)
+        {
+            Debug.LogWarning("Sound " + name + " doesnt exist");
+            return;
+        }
         Sounds_Play.source.Play();
 
     }

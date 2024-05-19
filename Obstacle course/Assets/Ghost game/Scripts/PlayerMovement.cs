@@ -36,11 +36,13 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform Fav_Room;
     public RoomsManager RoomManager;
+    public AudioManager AudioManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         RoomManager = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
         Fav_Room = RoomManager.Favorite_Room;
         characterController = GetComponent<CharacterController>();
@@ -165,7 +167,12 @@ public class PlayerMovement : MonoBehaviour
             velocity.y += gravity * Time.deltaTime;
             characterController.Move(velocity * Time.deltaTime);
         }
-        
+        if (moveDir == Vector3.zero)
+        {
+            AudioManager.Play("SFX_walk");
+
+        }
+
     }
     /// <summary>
     /// handels the crouch function
@@ -220,6 +227,7 @@ public class PlayerMovement : MonoBehaviour
             CrouchHandler();
             Move();
             SwitchingItems();
+            
         }
         
     }
