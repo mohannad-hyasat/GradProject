@@ -14,12 +14,13 @@ public class PauseMenuScript : MonoBehaviour
     public static bool isPaused;
     public Journal journal;
     public RoomsManager roomManager;
-  
+    private AudioManager audioManager;
     public TextMeshProUGUI EndGameText;
     
     
     private void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         PauseMenu_Screen.SetActive(false);
         EndGame_Screen.SetActive(false);
         journal = gameObject.GetComponent<Journal>();
