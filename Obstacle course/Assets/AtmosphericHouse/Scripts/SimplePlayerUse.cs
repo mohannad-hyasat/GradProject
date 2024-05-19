@@ -11,9 +11,11 @@ public class SimplePlayerUse : MonoBehaviour
     public KeyCode OpenClose;
     public KeyCode Flashlight;
 
+    private AudioManager audioManager;
+
     void Start()
     {
-
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
 
     void Update()
@@ -40,12 +42,13 @@ public class SimplePlayerUse : MonoBehaviour
         {
             if (hit.collider.gameObject.GetComponent<SimpleOpenClose>() )
             {
-               
+                audioManager.Play("SFX_door");
                 //Debug.Log("Object with SimpleOpenClose script found");
                 hit.collider.gameObject.BroadcastMessage("ObjectClicked");
             }
             if( hit.collider.gameObject.GetComponent<LightSwitch>())
             {
+                audioManager.Play("SFX_click");
                 var Switch = hit.collider.gameObject.GetComponent<LightSwitch>();
                 Switch.OnOff =  !Switch.OnOff;
             }

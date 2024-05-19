@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -35,11 +34,17 @@ public class PlayerMovement : MonoBehaviour
     public RoomsManager Favroom;
     public GameObject[] items = new GameObject[3];
 
+    public Transform Fav_Room;
+    public RoomsManager RoomManager;
+    public AudioManager AudioManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        RoomManager = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
+        Fav_Room = RoomManager.Favorite_Room;
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         PlayerHealth = GetComponentInParent<UniversalHealth>();
@@ -51,8 +56,8 @@ public class PlayerMovement : MonoBehaviour
         {
             items[i].SetActive(false);
         }
-
-
+        gameObject.transform.parent.position = Fav_Room.transform.position;
+        
     }
     /// <summary>
     /// function that handles all the switching between items mechanic
@@ -162,7 +167,12 @@ public class PlayerMovement : MonoBehaviour
             velocity.y += gravity * Time.deltaTime;
             characterController.Move(velocity * Time.deltaTime);
         }
-        
+        if (moveDir == Vector3.zero)
+        {
+            AudioManager.Play("SFX_walk");
+
+        }
+
     }
     /// <summary>
     /// handels the crouch function
@@ -217,6 +227,7 @@ public class PlayerMovement : MonoBehaviour
             CrouchHandler();
             Move();
             SwitchingItems();
+            
         }
         
     }

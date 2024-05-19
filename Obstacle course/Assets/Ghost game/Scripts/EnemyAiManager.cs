@@ -28,10 +28,14 @@ public class EnemyAiManager : MonoBehaviour
     private void Start()
     {
         Enemy = GetComponent<NavMeshAgent>();
-        Player = GameManager.Instance.Player.transform;
         RoomManager = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
         Fav_Room = RoomManager.Favorite_Room;
+        Invoke("GetPlayer", 3);
        
+    }
+    private void GetPlayer()
+    {
+        Player = GameManager.Instance.Player.transform;
     }
     public void Enemy_Patroling()
     {
@@ -62,16 +66,19 @@ public class EnemyAiManager : MonoBehaviour
    
     private void FixedUpdate()
     {
-        
-        DistanceFromPlayer = Vector3.Distance(Player.position, gameObject.transform.position);
-        
-        if (Enemy.remainingDistance <= Enemy.stoppingDistance) //done with path
+        if (Player != null)
         {
-            Enemy_Patroling();
-            Anim.SetBool("walk", false);
+            DistanceFromPlayer = Vector3.Distance(Player.position, gameObject.transform.position);
+
+            if (Enemy.remainingDistance <= Enemy.stoppingDistance) //done with path
+            {
+                Enemy_Patroling();
+                Anim.SetBool("walk", false);
+            }
+            else
+                Anim.SetBool("walk", true);
+
         }
-        else
-            Anim.SetBool("walk", true);
 
     }
 }

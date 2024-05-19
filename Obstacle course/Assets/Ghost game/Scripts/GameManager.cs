@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -25,6 +26,12 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public PlayerMovement MovementScript;
     public Transform PlayerCamera;
 
+    public Transform Fav_Room;
+    public RoomsManager RoomManager;
+
+
+ 
+
 
     private void Awake()
     {
@@ -34,10 +41,15 @@ public class GameManager : MonoBehaviour
         }
         else instance = this;
 
-        Player = Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>());
-        PlayerCamera = GameObject.FindWithTag("Camera").transform;
-        
+        Invoke("SpawnPlayer", 2);
+
     }
+    private void SpawnPlayer() 
+    {
+        Player = GameObject.Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>());
+        PlayerCamera = GameObject.FindWithTag("Camera").transform;
+    }
+
 
 }
 

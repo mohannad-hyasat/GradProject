@@ -25,7 +25,10 @@ public class Journal : MonoBehaviour
             isPaused = !isPaused;
         }
     }
-
+    public Ghost_Type GetGhostGuess()
+    {
+        return Ghost_Guess;
+    }
     public void SetGhostGuess(string GhostType)
     {
         if (GhostType == "Kikimora")
