@@ -71,7 +71,7 @@ namespace Michsky.UI.Dark
                 DarkUIEditorHandler.DrawProperty(backgroundVideo, customSkin, "Background Video");
                 DarkUIEditorHandler.DrawProperty(backgroundColorTint, customSkin, "Color Tint");
                 DarkUIEditorHandler.DrawProperty(backgroundSpeed, customSkin, "Animation Speed");
-                EditorGUILayout.HelpBox("Video Player will be used for background on Advanced mode.", MessageType.Info);
+                EditorGUILayout.HelpBox("Video PlayerPos will be used for background on Advanced mode.", MessageType.Info);
             }
 
             GUILayout.EndVertical();

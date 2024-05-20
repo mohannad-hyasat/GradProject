@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     }
     private void SpawnPlayer() 
     {
-        Player = GameObject.Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>());
+        Player = GameObject.Instantiate(Resources.Load<GameObject>("PlayerPos").GetComponent<UniversalHealth>());
         PlayerCamera = GameObject.FindWithTag("Camera").transform;
     }
 

@@ -15,7 +15,7 @@ public class ClassicalAI : MonoBehaviour
     public bool IsHaunting;
     public float RotationSpeed;
 
-    [Header("Distance From Player")]
+    [Header("Distance From PlayerPos")]
     public float DistanceFromPlayer;
     [Header("Rooms")]
     public Transform Fav_Room;

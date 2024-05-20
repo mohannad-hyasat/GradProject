@@ -43,7 +43,7 @@ public class SimpleOpenClose : MonoBehaviour
             }
     }
 
-    // Player clicks object. Method called from SimplePlayerUse script.
+    // PlayerPos clicks object. Method called from SimplePlayerUse script.
 
     void ObjectClicked()
     {

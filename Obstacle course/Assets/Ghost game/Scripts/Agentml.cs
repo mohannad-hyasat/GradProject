@@ -6,7 +6,7 @@ using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 public class Agentml : Agent
 {
-    public Transform playerTransform;
+    public Transform PlayerPos;
     public float speed = 2f;
     public EnemyAiManager Ghost;
 
@@ -18,21 +18,21 @@ public class Agentml : Agent
     }
     private void Start()
     {
-        playerTransform = FindObjectOfType<PlayerMovement>().transform;
+        PlayerPos = FindObjectOfType<PlayerMovement>().transform;
 
     }
     public override void OnEpisodeBegin()
     {
         // Reset the agent and the player to their starting positions
         transform.localPosition = new Vector3(Random.Range(-4, 4), 0.5f, Random.Range(-4, 4));
-        playerTransform.localPosition = new Vector3(Random.Range(-4, 4), 0.5f, Random.Range(-4, 4));
+        PlayerPos.localPosition = new Vector3(Random.Range(-4, 4), 0.5f, Random.Range(-4, 4));
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
         // Collect the agent's and player's positions as observations
         sensor.AddObservation(transform.localPosition);
-        sensor.AddObservation(playerTransform.localPosition);
+        sensor.AddObservation(PlayerPos.localPosition);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -45,7 +45,7 @@ public class Agentml : Agent
         transform.Translate(move * speed * Time.deltaTime);
 
         // Calculate the distance to the player
-        float distanceToPlayer = Vector3.Distance(transform.localPosition, playerTransform.localPosition);
+        float distanceToPlayer = Vector3.Distance(transform.localPosition, PlayerPos.localPosition);
 
         // Reward the agent for getting closer to the player
         if (distanceToPlayer < 1.5f)

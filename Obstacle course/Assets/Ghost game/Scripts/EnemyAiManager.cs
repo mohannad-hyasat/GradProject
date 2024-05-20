@@ -10,7 +10,7 @@ public class EnemyAiManager : MonoBehaviour
 
     private void Update()
     {
-        if(AItype.Classic)
+
     }
 
 }

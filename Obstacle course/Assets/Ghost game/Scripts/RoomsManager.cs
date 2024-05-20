@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RoomsManager : MonoBehaviour
 {
-    [Header("Player Settings")]
+    [Header("PlayerPos Settings")]
     public float DistanceBetweenPlayerAndRoom;
 
     [Header("Rooms")]

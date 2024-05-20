@@ -9,18 +9,16 @@ using System.Threading.Tasks;
 
 public class MLAgent : Agent
 {
-    public Transform playerTransform;
     public float speed = 2f;
-    public EnemyAiManager Ghost;
     public bool trainingMode;
 
     [Header("Misc Attributes")]
     public NavMeshAgent Enemy;
-    public Transform Player;
+    public Transform PlayerPos;
     public Animator Anim;
     public LayerMask WhatIsGround;
     public LayerMask WhatIsPlayer;
-    public UniversalHealth Enemy_Health;
+    public UniversalHealth Player_Health;
 
     [Header("Attack Attributes")]
     public bool IsHaunting;
@@ -45,11 +43,9 @@ public class MLAgent : Agent
     }
     private void Start()
     {
-        playerTransform = FindObjectOfType<PlayerMovement>().transform;
-        Enemy_Health = FindObjectOfType<UniversalHealth>();
+        Anim = gameObject.GetComponent<Animator>();
         Enemy = GetComponent<NavMeshAgent>();
         RoomManager = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
-        
         Invoke("Get_Player", 3);
 
     }
@@ -57,10 +53,10 @@ public class MLAgent : Agent
     {
         // Reset the agent and the player to their starting positions
         //transform.localPosition = new Vector3(Random.Range(-4, 4), 0.5f, Random.Range(-4, 4));
-        //playerTransform.localPosition = new Vector3(Random.Range(-4, 4), 0.5f, Random.Range(-4, 4));
+        //PlayerPos.localPosition = new Vector3(Random.Range(-4, 4), 0.5f, Random.Range(-4, 4));
         RoomManager.SetFavRoom();
         Fav_Room = RoomManager.Favorite_Room;
-        playerTransform.localPosition = new Vector3(Fav_Room.position.x * Random.Range(-2,2), Fav_Room.position.y, Fav_Room.position.z * Random.Range(-2, 2));
+        PlayerPos.localPosition = new Vector3(Fav_Room.position.x * Random.Range(-2,2), Fav_Room.position.y, Fav_Room.position.z * Random.Range(-2, 2));
         transform.localPosition = Fav_Room.localPosition;
         
     }
@@ -69,7 +65,7 @@ public class MLAgent : Agent
     {
         // Collect the agent's and player's positions as observations
         sensor.AddObservation(transform.localPosition);
-        sensor.AddObservation(playerTransform.localPosition);
+        sensor.AddObservation(PlayerPos.localPosition);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -82,7 +78,7 @@ public class MLAgent : Agent
         transform.Translate(move * speed * Time.deltaTime);
 
         // Calculate the distance to the player
-        float distanceToPlayer = Vector3.Distance(transform.localPosition, playerTransform.localPosition);
+        float distanceToPlayer = Vector3.Distance(transform.localPosition, PlayerPos.localPosition);
 
         // Reward the agent for getting closer to the player
         if (trainingMode)
@@ -109,7 +105,8 @@ public class MLAgent : Agent
     }
     private void Get_Player()
     {
-        Player = GameManager.Instance.Player.transform;
+        Player_Health = GameManager.Instance.Player;
+        PlayerPos = GameManager.Instance.Player.transform;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -118,7 +115,7 @@ public class MLAgent : Agent
             AddReward(-.5f);
         }
     }
-    private async void ResetGhost()
+    private async void Haunt()
     {
         duringHaunt = true;
         IsHaunting = true;
@@ -136,14 +133,14 @@ public class MLAgent : Agent
     {
         if(IsHaunting && !duringHaunt)
         {
-            ResetGhost();
+            Haunt();
         }
-        if(Enemy_Health.Sanity < 75)
+        /*if(Player_Health.Sanity < 75)
         {
             Invoke("probability", 2);
             
-        }
-    }
+        }*/
+    }/*
     private void probability()
     {
         if (Random.Range(1, 100) <= 10)
@@ -155,5 +152,5 @@ public class MLAgent : Agent
     private void StartHaunt()
     {
         throw new System.NotImplementedException();
-    }
+    }*/
 }

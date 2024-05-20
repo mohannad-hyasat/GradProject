@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
-    [Header("Player transfrom")]
+    [Header("PlayerPos transfrom")]
     public Transform PlayerOriantation;
     public UniversalHealth Playerhealth;
     [HideInInspector]
