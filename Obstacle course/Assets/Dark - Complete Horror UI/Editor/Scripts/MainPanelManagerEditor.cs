@@ -106,7 +106,7 @@ namespace Michsky.UI.Dark
 
                 case 1:
                     DarkUIEditorHandler.DrawHeader(customSkin, "Options Header", 6);
-                    instantInOnEnable.boolValue = DarkUIEditorHandler.DrawToggle(instantInOnEnable.boolValue, customSkin, "Instant In On Enable");
+                    instantInOnEnable.boolValue = DarkUIEditorHandler.DrawToggle(instantInOnEnable.boolValue, customSkin, "Instant In isOn Enable");
                     DarkUIEditorHandler.DrawProperty(animationSpeed, customSkin, "Anim Speed");
                     DarkUIEditorHandler.DrawProperty(animationSmoothness, customSkin, "Anim Smoothness");
                     DarkUIEditorHandler.DrawProperty(disablePanelAfter, customSkin, "Disable Panel After");           

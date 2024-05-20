@@ -46,7 +46,8 @@ public class MLAgent : Agent
         Anim = gameObject.GetComponent<Animator>();
         Enemy = GetComponent<NavMeshAgent>();
         RoomManager = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
-        Invoke("Get_Player", 3);
+        StartCoroutine(PlayerHandler());
+        Get_Player();
 
     }
     public override void OnEpisodeBegin()
@@ -56,7 +57,7 @@ public class MLAgent : Agent
         //PlayerPos.localPosition = new Vector3(Random.Range(-4, 4), 0.5f, Random.Range(-4, 4));
         RoomManager.SetFavRoom();
         Fav_Room = RoomManager.Favorite_Room;
-        PlayerPos.localPosition = new Vector3(Fav_Room.position.x * Random.Range(-2,2), Fav_Room.position.y, Fav_Room.position.z * Random.Range(-2, 2));
+        //PlayerPos.localPosition = new Vector3(Fav_Room.position.x * Random.Range(-2,2), Fav_Room.position.y, Fav_Room.position.z * Random.Range(-2, 2));
         transform.localPosition = Fav_Room.localPosition;
         
     }
@@ -128,6 +129,10 @@ public class MLAgent : Agent
         }
         duringHaunt = false;
         IsHaunting = false;
+    }
+    private IEnumerator PlayerHandler()
+    {
+        yield return new WaitForSeconds(5);
     }
     private void FixedUpdate()
     {

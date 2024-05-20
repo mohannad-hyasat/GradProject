@@ -90,9 +90,9 @@ namespace Michsky.UI.Dark
                     DarkUIEditorHandler.DrawHeader(customSkin, "Content Header", 6);
                     disableSplashScreen.boolValue = DarkUIEditorHandler.DrawToggle(disableSplashScreen.boolValue, customSkin, "Disable Splash Screen");
                     showOnlyOnce.boolValue = DarkUIEditorHandler.DrawToggle(showOnlyOnce.boolValue, customSkin, "Show Only Once");
-                    skipOnAnyKeyPress.boolValue = DarkUIEditorHandler.DrawToggle(skipOnAnyKeyPress.boolValue, customSkin, "Skip On Any Key Press");
+                    skipOnAnyKeyPress.boolValue = DarkUIEditorHandler.DrawToggle(skipOnAnyKeyPress.boolValue, customSkin, "Skip isOn Any Key Press");
                     DarkUIEditorHandler.DrawProperty(startDelay, customSkin, "Start Delay");
-                    EditorGUILayout.PropertyField(onSplashScreenEnd, new GUIContent("On Splash Screen End"), true);
+                    EditorGUILayout.PropertyField(onSplashScreenEnd, new GUIContent("isOn Splash Screen End"), true);
                     break;
             }
 

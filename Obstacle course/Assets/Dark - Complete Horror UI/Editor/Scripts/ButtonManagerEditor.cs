@@ -141,9 +141,9 @@ namespace Michsky.UI.Dark
 
                     GUILayout.Space(10);
                     GUILayout.Box(new GUIContent(""), customSkin.FindStyle("Events Header"));
-                    EditorGUILayout.PropertyField(clickEvent, new GUIContent("On Click Event"), true);
-                    EditorGUILayout.PropertyField(hoverEvent, new GUIContent("On Hover Event"), true);
-                    EditorGUILayout.PropertyField(hoverEvent, new GUIContent("On Leave Event"), true);
+                    EditorGUILayout.PropertyField(clickEvent, new GUIContent("isOn Click Event"), true);
+                    EditorGUILayout.PropertyField(hoverEvent, new GUIContent("isOn Hover Event"), true);
+                    EditorGUILayout.PropertyField(hoverEvent, new GUIContent("isOn Leave Event"), true);
                     break;
 
                 case 1:
@@ -247,7 +247,7 @@ namespace Michsky.UI.Dark
                     {
                         GUILayout.BeginHorizontal(EditorStyles.helpBox);
 
-                        renderOnTop.boolValue = GUILayout.Toggle(renderOnTop.boolValue, new GUIContent("Render On Top"), customSkin.FindStyle("Toggle"));
+                        renderOnTop.boolValue = GUILayout.Toggle(renderOnTop.boolValue, new GUIContent("Render isOn Top"), customSkin.FindStyle("Toggle"));
                         renderOnTop.boolValue = GUILayout.Toggle(renderOnTop.boolValue, new GUIContent(""), customSkin.FindStyle("Toggle Helper"));
 
                         GUILayout.EndHorizontal();

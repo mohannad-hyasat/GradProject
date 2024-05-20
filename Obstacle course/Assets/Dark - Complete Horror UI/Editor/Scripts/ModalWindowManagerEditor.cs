@@ -104,8 +104,8 @@ namespace Michsky.UI.Dark
                     }
 
                     DarkUIEditorHandler.DrawHeader(customSkin, "Events Header", 10);
-                    EditorGUILayout.PropertyField(onEnable, new GUIContent("On Confirm"), true);
-                    EditorGUILayout.PropertyField(onCancel, new GUIContent("On Cancel"), true);
+                    EditorGUILayout.PropertyField(onEnable, new GUIContent("isOn Confirm"), true);
+                    EditorGUILayout.PropertyField(onCancel, new GUIContent("isOn Cancel"), true);
                     break;
 
                 case 1:
@@ -127,7 +127,7 @@ namespace Michsky.UI.Dark
                     GUILayout.EndVertical();
                     GUILayout.BeginVertical(EditorStyles.helpBox);
                     GUILayout.Space(-3);
-                    disableOnOut.boolValue = DarkUIEditorHandler.DrawTogglePlain(disableOnOut.boolValue, customSkin, "Disable On Close");
+                    disableOnOut.boolValue = DarkUIEditorHandler.DrawTogglePlain(disableOnOut.boolValue, customSkin, "Disable isOn Close");
                     GUILayout.Space(4);
                     if (disableOnOut.boolValue == true) { DarkUIEditorHandler.DrawPropertyPlain(disableAfter, customSkin, "Disable After"); }
                     GUILayout.EndVertical();

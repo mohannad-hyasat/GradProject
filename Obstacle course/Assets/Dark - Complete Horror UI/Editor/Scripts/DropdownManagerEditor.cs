@@ -144,7 +144,7 @@ namespace Michsky.UI.Dark
                     }
 
                     setHighPriorty.boolValue = DarkUIEditorHandler.DrawToggle(setHighPriorty.boolValue, customSkin, "Set High Priorty");
-                    outOnPointerExit.boolValue = DarkUIEditorHandler.DrawToggle(outOnPointerExit.boolValue, customSkin, "Out On Pointer Exit");
+                    outOnPointerExit.boolValue = DarkUIEditorHandler.DrawToggle(outOnPointerExit.boolValue, customSkin, "Out isOn Pointer Exit");
                     isListItem.boolValue = DarkUIEditorHandler.DrawToggle(isListItem.boolValue, customSkin, "Is List Item");
 
                     if (isListItem.boolValue == true && dTarget.listParent == null)

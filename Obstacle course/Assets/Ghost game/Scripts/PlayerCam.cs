@@ -18,7 +18,7 @@ public class PlayerCam : MonoBehaviour
     public Transform Head;
     void Start()
     {
-        
+        ghostScript = FindObjectOfType<MLAgent>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         PlayerOriantation = transform.parent;
