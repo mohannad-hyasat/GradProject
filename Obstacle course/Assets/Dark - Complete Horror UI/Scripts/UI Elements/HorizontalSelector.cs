@@ -185,7 +185,7 @@ namespace Michsky.UI.Dark
                 for (int i = 0; i < itemList.Count; ++i)
                 {
                     GameObject go = indicatorParent.GetChild(i).gameObject;
-                    Transform onObj = go.transform.Find("On");
+                    Transform onObj = go.transform.Find("isOn");
                     Transform offObj = go.transform.Find("Off");
 
                     if (i == index)
@@ -278,7 +278,7 @@ namespace Michsky.UI.Dark
                 for (int i = 0; i < itemList.Count; ++i)
                 {
                     GameObject go = indicatorParent.GetChild(i).gameObject;
-                    Transform onObj = go.transform.Find("On"); ;
+                    Transform onObj = go.transform.Find("isOn"); ;
                     Transform offObj = go.transform.Find("Off");
 
                     if (i == index)
@@ -341,7 +341,7 @@ namespace Michsky.UI.Dark
                 GameObject go = Instantiate(indicatorObject, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                 go.transform.SetParent(indicatorParent, false);
                 go.name = itemList[i].itemTitle;
-                Transform onObj = go.transform.Find("On");
+                Transform onObj = go.transform.Find("isOn");
                 Transform offObj = go.transform.Find("Off");
 
                 if (i == index)

@@ -41,13 +41,13 @@ public class GameManager : MonoBehaviour
         }
         else instance = this;
 
-        Invoke("SpawnPlayer", 2);
+        Player = GameObject.Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>());
+        PlayerCamera = GameObject.FindWithTag("Camera").transform;
 
     }
     private void SpawnPlayer() 
     {
-        Player = GameObject.Instantiate(Resources.Load<GameObject>("PlayerPos").GetComponent<UniversalHealth>());
-        PlayerCamera = GameObject.FindWithTag("Camera").transform;
+        
     }
 
 

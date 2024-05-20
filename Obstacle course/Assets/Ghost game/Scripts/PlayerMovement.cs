@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         {
             items[i].SetActive(false);
         }
-        gameObject.transform.parent.position = Fav_Room.transform.position;
+        gameObject.transform.parent.localPosition = Fav_Room.transform.localPosition;
         
     }
     /// <summary>

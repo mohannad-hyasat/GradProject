@@ -93,7 +93,7 @@ namespace Michsky.UI.Dark
                     GUILayout.EndVertical();
 
                     DarkUIEditorHandler.DrawHeader(customSkin, "Events Header", 10);
-                    EditorGUILayout.PropertyField(onValueChanged, new GUIContent("On Value Changed"), true);
+                    EditorGUILayout.PropertyField(onValueChanged, new GUIContent("isOn Value Changed"), true);
                     break;
 
                 case 1:

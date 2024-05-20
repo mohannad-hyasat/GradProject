@@ -42,7 +42,7 @@ namespace Michsky.UI.Dark
                 {
                     if (isOn == true)
                     {
-                        switchAnimator.Play("Switch On");
+                        switchAnimator.Play("Switch isOn");
                         isOn = true;
                         PlayerPrefs.SetString(switchTag + "DarkUISwitch", "true");
                     }
@@ -57,7 +57,7 @@ namespace Michsky.UI.Dark
 
                 else if (PlayerPrefs.GetString(switchTag + "DarkUISwitch") == "true")
                 {
-                    switchAnimator.Play("Switch On");
+                    switchAnimator.Play("Switch isOn");
                     isOn = true;
                 }
 
@@ -72,7 +72,7 @@ namespace Michsky.UI.Dark
             {
                 if (isOn == true)
                 {
-                    switchAnimator.Play("Switch On");
+                    switchAnimator.Play("Switch isOn");
                     isOn = true;
                 }
 
@@ -100,7 +100,7 @@ namespace Michsky.UI.Dark
                 {
                     if (isOn == true)
                     {
-                        switchAnimator.Play("Switch On");
+                        switchAnimator.Play("Switch isOn");
                         isOn = true;
                         PlayerPrefs.SetString(switchTag + "DarkUISwitch", "true");
                     }
@@ -115,7 +115,7 @@ namespace Michsky.UI.Dark
 
                 else if (PlayerPrefs.GetString(switchTag + "DarkUISwitch") == "true")
                 {
-                    switchAnimator.Play("Switch On");
+                    switchAnimator.Play("Switch isOn");
                     isOn = true;
                 }
 
@@ -130,7 +130,7 @@ namespace Michsky.UI.Dark
             {
                 if (isOn == true)
                 {
-                    switchAnimator.Play("Switch On");
+                    switchAnimator.Play("Switch isOn");
                     isOn = true;
                 }
 
@@ -156,7 +156,7 @@ namespace Michsky.UI.Dark
 
             else
             {
-                switchAnimator.Play("Switch On");
+                switchAnimator.Play("Switch isOn");
                 isOn = true;
                 onEvents.Invoke();
 
