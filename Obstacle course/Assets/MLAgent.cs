@@ -33,7 +33,7 @@ public class MLAgent : Agent
 
     private bool duringHaunt = false;
 
-    public const float hauntDuration = 2.5f;
+    public const float hauntDuration = 25f;
 
     public override void Initialize()
     {
@@ -119,7 +119,7 @@ public class MLAgent : Agent
     {
         duringHaunt = true;
         IsHaunting = true;
-        gameObject.transform.position = Fav_Room.transform.position;
+        gameObject.transform.parent.position = Fav_Room.transform.position;
         float timeLapsed = 0f;
         while (timeLapsed < hauntDuration)
         { 

@@ -56,10 +56,10 @@ public class PlayerCam : MonoBehaviour
     }
     public void Hide()
     {
-        cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Ghost"));
+        cam.cullingMask &= ~(1 << LayerMask.NameToLayer("ghost"));
     }
     public void Show()
     {
-        cam.cullingMask |= 1 << LayerMask.NameToLayer("Ghost");
+        cam.cullingMask |= 1 << LayerMask.NameToLayer("ghost");
     }
 }
