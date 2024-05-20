@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: e392886da1131014e866a21f03877ce8
+timeCreated: 1531503286
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: ' EMF Meter'
+    100002: Box01
+    100004: Button
+    100006: Button 1
+    100008: Camera Tripod
+    100010: Clip
+    100012: Game Trail Camera
+    100014: Geiger Counter
+    100016: //RootNode
+    100018: GLASS
+    100020: HD CAM Lens Protector
+    100022: HD NightVision Camera
+    100024: Interior Foam Blank
+    100026: Interior Foam Top
+    100028: Knob
+    100030: Light
+    100032: Light Switch BOTTOM
+    100034: Light Switch TOP
+    100036: Listening Gun
+    100038: MEL Meter
+    100040: Microphone
+    100042: Needle
+    100044: Notepad
+    100046: Object01
+    100048: Peli Case BOTTOM
+    100050: Peli Case Handle
+    100052: Peli Case TOP
+    100054: Sharpie Marker
+    100056: Sharpie Marker CAP
+    100058: Spirit Box
+    100060: Talk Button
+    100062: Tripod Leg
+    100064: Tripod Leg01
+    100066: Tripod Leg02
+    100068: Walkie Talkie
+    100070: Tripod Pivot
+    100072: ON OFF Switch
+    400000: ' EMF Meter'
+    400002: Box01
+    400004: Button
+    400006: Button 1
+    400008: Camera Tripod
+    400010: Clip
+    400012: Game Trail Camera
+    400014: Geiger Counter
+    400016: //RootNode
+    400018: GLASS
+    400020: HD CAM Lens Protector
+    400022: HD NightVision Camera
+    400024: Interior Foam Blank
+    400026: Interior Foam Top
+    400028: Knob
+    400030: Light
+    400032: Light Switch BOTTOM
+    400034: Light Switch TOP
+    400036: Listening Gun
+    400038: MEL Meter
+    400040: Microphone
+    400042: Needle
+    400044: Notepad
+    400046: Object01
+    400048: Peli Case BOTTOM
+    400050: Peli Case Handle
+    400052: Peli Case TOP
+    400054: Sharpie Marker
+    400056: Sharpie Marker CAP
+    400058: Spirit Box
+    400060: Talk Button
+    400062: Tripod Leg
+    400064: Tripod Leg01
+    400066: Tripod Leg02
+    400068: Walkie Talkie
+    400070: Tripod Pivot
+    400072: ON OFF Switch
+    2300000: ' EMF Meter'
+    2300002: Box01
+    2300004: Button
+    2300006: Button 1
+    2300008: Camera Tripod
+    2300010: Clip
+    2300012: Game Trail Camera
+    2300014: Geiger Counter
+    2300016: GLASS
+    2300018: HD CAM Lens Protector
+    2300020: HD NightVision Camera
+    2300022: Interior Foam Blank
+    2300024: Interior Foam Top
+    2300026: Knob
+    2300028: Light
+    2300030: Light Switch BOTTOM
+    2300032: Light Switch TOP
+    2300034: Listening Gun
+    2300036: MEL Meter
+    2300038: Microphone
+    2300040: Needle
+    2300042: Notepad
+    2300044: Object01
+    2300046: Peli Case BOTTOM
+    2300048: Peli Case Handle
+    2300050: Peli Case TOP
+    2300052: Sharpie Marker
+    2300054: Sharpie Marker CAP
+    2300056: Spirit Box
+    2300058: Talk Button
+    2300060: Tripod Leg
+    2300062: Tripod Leg01
+    2300064: Tripod Leg02
+    2300066: Walkie Talkie
+    2300068: Tripod Pivot
+    2300070: ON OFF Switch
+    3300000: ' EMF Meter'
+    3300002: Box01
+    3300004: Button
+    3300006: Button 1
+    3300008: Camera Tripod
+    3300010: Clip
+    3300012: Game Trail Camera
+    3300014: Geiger Counter
+    3300016: GLASS
+    3300018: HD CAM Lens Protector
+    3300020: HD NightVision Camera
+    3300022: Interior Foam Blank
+    3300024: Interior Foam Top
+    3300026: Knob
+    3300028: Light
+    3300030: Light Switch BOTTOM
+    3300032: Light Switch TOP
+    3300034: Listening Gun
+    3300036: MEL Meter
+    3300038: Microphone
+    3300040: Needle
+    3300042: Notepad
+    3300044: Object01
+    3300046: Peli Case BOTTOM
+    3300048: Peli Case Handle
+    3300050: Peli Case TOP
+    3300052: Sharpie Marker
+    3300054: Sharpie Marker CAP
+    3300056: Spirit Box
+    3300058: Talk Button
+    3300060: Tripod Leg
+    3300062: Tripod Leg01
+    3300064: Tripod Leg02
+    3300066: Walkie Talkie
+    3300068: Tripod Pivot
+    3300070: ON OFF Switch
+    4300000: MEL Meter
+    4300002: Spirit Box
+    4300004: Peli Case BOTTOM
+    4300006: Interior Foam Blank
+    4300008: Peli Case Handle
+    4300010: Peli Case TOP
+    4300012: Interior Foam Top
+    4300014: Camera Tripod
+    4300016: Light
+    4300018: Light Switch TOP
+    4300020: Light Switch BOTTOM
+    4300022: Box01
+    4300024: HD NightVision Camera
+    4300026: HD CAM Lens Protector
+    4300028: Tripod Leg
+    4300030: Tripod Leg01
+    4300032: Tripod Leg02
+    4300034: Microphone
+    4300036: Object01
+    4300038: Listening Gun
+    4300040: Sharpie Marker
+    4300042: Sharpie Marker CAP
+    4300044: ' EMF Meter'
+    4300046: Button
+    4300048: Notepad
+    4300050: Geiger Counter
+    4300052: Knob
+    4300054: GLASS
+    4300056: Button
+    4300058: Needle
+    4300060: Game Trail Camera
+    4300062: Walkie Talkie
+    4300064: Talk Button
+    4300066: Clip
+    4300068: Tripod Pivot
+    4300070: ON OFF Switch
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
