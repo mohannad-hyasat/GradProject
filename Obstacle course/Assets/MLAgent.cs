@@ -46,7 +46,8 @@ public class MLAgent : Agent
         Anim = gameObject.GetComponent<Animator>();
         Enemy = GetComponent<NavMeshAgent>();
         RoomManager = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
-        StartCoroutine(PlayerHandler());
+        Fav_Room = RoomManager.Favorite_Room;
+        transform.parent.position = Fav_Room.position;
         Get_Player();
 
     }
@@ -55,11 +56,9 @@ public class MLAgent : Agent
         // Reset the agent and the player to their starting positions
         //transform.localPosition = new Vector3(Random.Range(-4, 4), 0.5f, Random.Range(-4, 4));
         //PlayerPos.localPosition = new Vector3(Random.Range(-4, 4), 0.5f, Random.Range(-4, 4));
-        RoomManager.SetFavRoom();
-        Fav_Room = RoomManager.Favorite_Room;
         //PlayerPos.localPosition = new Vector3(Fav_Room.position.x * Random.Range(-2,2), Fav_Room.position.y, Fav_Room.position.z * Random.Range(-2, 2));
-        transform.localPosition = Fav_Room.localPosition;
-        
+        transform.parent.position = Fav_Room.position;
+
     }
 
     public override void CollectObservations(VectorSensor sensor)

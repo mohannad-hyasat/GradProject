@@ -40,10 +40,6 @@ public class EMF_Script : MonoBehaviour
             if(i == RoomsManager.Emf_Level)
             {
                 Lights[i-1].SetActive(true);
-                if(i != 1)
-                {
-                    AM.Play("SFX_emf" + i.ToString());
-                }
                 
             }
             else
