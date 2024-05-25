@@ -21,7 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Procedural Smoke
-  m_Shader: {fileID: -6465566751694194690, guid: 48556ccdc22debe4f80d408d07ea0352, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 48556ccdc22debe4f80d408d07ea0352,
+    type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -63,12 +64,12 @@ Material:
     - _Simple_Noise_Scale: 10
     - _Simple_Remap: 0.232
     - _Surface_Depth_Fade: 40
-    - _Use_As_Fog_Particle: 0
+    - _Use_As_Fog_Particle: 1
     - _Voronoi_Noise_Amount: 0.641
     - _Voronoi_Noise_Scale: 1.85
     - _Voronoi_Remap: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.5176471}
     - _Simple_Noise_Time_Scale: {r: 0, g: -0.4, b: 0, a: 0}
     - _Voronoi_Noise_Time_Scale: {r: -0.3, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

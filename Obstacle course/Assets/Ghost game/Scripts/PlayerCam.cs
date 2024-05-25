@@ -13,12 +13,12 @@ public class PlayerCam : MonoBehaviour
     public float mouseSensitivity;
     public Camera cam;
     public bool haunting;
-    public MLAgent ghostScript;
+    public EnemyAiManager ghostScript;
 
     public Transform Head;
     void Start()
     {
-        ghostScript = FindObjectOfType<MLAgent>();
+        ghostScript = FindObjectOfType<EnemyAiManager>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         PlayerOriantation = transform.parent;
@@ -45,7 +45,7 @@ public class PlayerCam : MonoBehaviour
             RotatePlayerAndCamera(); 
         }
 
-        if (ghostScript.IsHaunting)
+        if (ghostScript.Ishaunting)
         {
             Show();
         }
