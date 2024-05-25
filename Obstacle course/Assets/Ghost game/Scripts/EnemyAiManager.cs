@@ -11,6 +11,7 @@ public class EnemyAiManager : MonoBehaviour
     public UniversalHealth PlayerSanity;
     public Transform FavRoom;
     public int hauntmultiplier;
+    private AudioManager AM;
 
 
     private void Start()
@@ -18,6 +19,7 @@ public class EnemyAiManager : MonoBehaviour
         Player = FindObjectOfType<PlayerMovement>().GetComponent<PlayerMovement>().transform;
         PlayerSanity = FindObjectOfType<UniversalHealth>().GetComponent<UniversalHealth>();
         FavRoom = FindAnyObjectByType<RoomsManager>().GetComponent<RoomsManager>().Favorite_Room;
+        AM = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         Ishaunting = false;
         InvokeRepeating(nameof(hauntRandom), 1, 1);
         InvokeRepeating(nameof(PlayerFinder), 1, 0.3f);
@@ -26,6 +28,7 @@ public class EnemyAiManager : MonoBehaviour
     public void Haunt()
     {
         gameObject.transform.position = FavRoom.position;
+        AM.Play("SFX_Haunt");
     }
 
     public void hauntRandom()
