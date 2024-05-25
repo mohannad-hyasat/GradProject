@@ -10,8 +10,8 @@ public class EnemyAiManager : MonoBehaviour
     public bool Ishaunting;
     public UniversalHealth PlayerSanity;
     public Transform FavRoom;
-    public int hauntmultiplier;
     private AudioManager AM;
+    public int hauntmultiplier;
 
 
     private void Start()
