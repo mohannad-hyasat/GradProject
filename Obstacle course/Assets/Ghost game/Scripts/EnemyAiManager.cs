@@ -1,5 +1,6 @@
 using Google.Protobuf.WellKnownTypes;
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,6 +13,10 @@ public class EnemyAiManager : MonoBehaviour
     public Transform FavRoom;
     private AudioManager AM;
     public int hauntmultiplier;
+    private const float hauntDuration = 20f;
+    private bool duringHaunt = false;
+    private bool duringCooldown = false;
+    private const float cooldownDuration = 30f;
 
 
     private void Start()
@@ -25,10 +30,33 @@ public class EnemyAiManager : MonoBehaviour
         InvokeRepeating(nameof(PlayerFinder), 1, 0.3f);
     }
 
-    public void Haunt()
+    private async void Haunt()
     {
-        gameObject.transform.position = FavRoom.position;
+        duringHaunt = true;
+        Ishaunting = true;
+        gameObject.transform.position = FavRoom.transform.position;
         AM.Play("SFX_Haunt");
+        float timeLapsed = 0f;
+        while (timeLapsed < hauntDuration)
+        {
+            Agent.SetDestination(Player.position);
+            timeLapsed += Time.deltaTime;
+            await Task.Yield();
+        }
+        duringHaunt = false;
+        Ishaunting = false;
+    }
+    private async void HauntCooldown()
+    {
+        duringCooldown = true;
+        float timeLapsed = 0f;
+        while (timeLapsed < cooldownDuration)
+        {
+            Agent.SetDestination(Player.position);
+            timeLapsed += Time.deltaTime;
+            await Task.Yield();
+        }
+        duringCooldown = false;
     }
 
     public void hauntRandom()
@@ -45,19 +73,13 @@ public class EnemyAiManager : MonoBehaviour
 
         if(PlayerSanity.Sanity <= 75 && !Ishaunting)
         {
-           if (hauntmultiplier <= 15)
+           if (hauntmultiplier <= 15 && !duringHaunt && !duringCooldown)
             {
                 Haunt();
-                Ishaunting = true;
-                Agent.SetDestination(Player.position);
+                HauntCooldown();
             }
           
 
-        }
-        if (hauntmultiplier >= 85)
-        {
-            Ishaunting = false;
-            Agent.SetDestination(Player.position);
         }
         
     }

@@ -3427,7 +3427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkspeed: 2
-  runSpeed: 5
+  runSpeed: 3.5
   crouchSpeed: 1
   isGrounded: 0
   groundMask:
