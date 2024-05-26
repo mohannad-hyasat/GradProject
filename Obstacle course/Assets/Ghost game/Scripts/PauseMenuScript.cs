@@ -16,6 +16,7 @@ public class PauseMenuScript : MonoBehaviour
     public RoomsManager roomManager;
     private AudioManager audioManager;
     public TextMeshProUGUI EndGameText;
+    public UniversalHealth PlayerStatus;
     
     
     private void Start()
@@ -25,6 +26,7 @@ public class PauseMenuScript : MonoBehaviour
         EndGame_Screen.SetActive(false);
         journal = gameObject.GetComponent<Journal>();
         roomManager = GameObject.FindGameObjectWithTag("World").GetComponent<RoomsManager>();
+        PlayerStatus = FindObjectOfType<UniversalHealth>().GetComponent<UniversalHealth>();
    
     }
 
@@ -41,6 +43,11 @@ public class PauseMenuScript : MonoBehaviour
             {
                 PauseGame();
             }
+        }
+
+        if(PlayerStatus.IsDead)
+        {
+            EndGame();
         }
     }
 
@@ -64,7 +71,11 @@ public class PauseMenuScript : MonoBehaviour
     public void EndGame()
     {
         EndGame_Screen.SetActive(true);
-        if(journal.GetGhostGuess() == roomManager.GhostType)
+        Time.timeScale = 0.0f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        isPaused = true;
+        if (journal.GetGhostGuess() == roomManager.GhostType)
         {
             EndGameText.text = "CONGRATS, YOU WIN!!";
         }

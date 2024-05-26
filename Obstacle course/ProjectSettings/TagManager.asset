@@ -18,6 +18,8 @@ TagManager:
   - EndGameText
   - AudioManager
   - boundary
+  - Enemy
+  - Spawn
   layers:
   - Default
   - TransparentFX

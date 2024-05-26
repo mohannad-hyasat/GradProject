@@ -14,6 +14,7 @@ public class PlayerCam : MonoBehaviour
     public Camera cam;
     public bool haunting;
     public EnemyAiManager ghostScript;
+    
 
     public Transform Head;
     void Start()
@@ -52,6 +53,10 @@ public class PlayerCam : MonoBehaviour
         else
         {
             Hide();
+        }
+        if(Playerhealth.IsDead)
+        {
+            transform.position = Head.position;
         }
     }
     public void Hide()

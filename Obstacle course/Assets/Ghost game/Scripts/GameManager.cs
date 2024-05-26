@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public UniversalHealth Player;
     [HideInInspector] public PlayerMovement MovementScript;
     public Transform PlayerCamera;
+    public Transform Spawn;
 
     public Transform Fav_Room;
     public RoomsManager RoomManager;
@@ -40,8 +41,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         else instance = this;
-
-        Player = GameObject.Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>());
+        Spawn = GameObject.FindGameObjectWithTag("Spawn").transform;
+        Player = GameObject.Instantiate(Resources.Load<GameObject>("Player").GetComponent<UniversalHealth>(),Spawn);
         PlayerCamera = GameObject.FindWithTag("Camera").transform;
 
     }

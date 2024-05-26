@@ -67,6 +67,27 @@ public class EnemyAiManager : MonoBehaviour
     {
         Player = FindObjectOfType<PlayerMovement>().GetComponent<PlayerMovement>().transform;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        if(Ishaunting)
+        {
+            if(other.CompareTag("Player"))
+            {
+                PlayerSanity.Apply_Damage(100);
+            }
+
+
+
+        }
+
+
+
+    }
+
+
+
     private void Update()
     {
         Agent.SetDestination(Player.position);
