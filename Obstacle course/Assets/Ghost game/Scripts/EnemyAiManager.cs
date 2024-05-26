@@ -16,7 +16,7 @@ public class EnemyAiManager : MonoBehaviour
     private const float hauntDuration = 20f;
     private bool duringHaunt = false;
     private bool duringCooldown = false;
-    private const float cooldownDuration = 30f;
+    private const float cooldownDuration = 60f;
 
 
     private void Start()
